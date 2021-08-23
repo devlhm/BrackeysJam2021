@@ -12,6 +12,10 @@ func _unhandled_input(event):
 	if event.is_action(input):
 		if event.is_action_pressed(input, false):
 			if current_note != null:
+				
+				if (perfect || good || okay):
+					get_parent().increase_hp()
+				
 				if perfect:
 					get_parent().increment_score(3)
 					current_note.destroy(3)

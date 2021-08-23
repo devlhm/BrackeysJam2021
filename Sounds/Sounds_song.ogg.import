@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Sounds_song.ogg-9fb5398544abe9862dea16e163e7e482.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

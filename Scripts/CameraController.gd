@@ -15,7 +15,6 @@ func _process(delta):
 	
 
 func shake(new_shake, shake_time=0.4, shake_limit=100):
-	print("shake")
 	shake_amount += new_shake
 	
 	if shake_amount > shake_limit:

@@ -18,13 +18,13 @@ extents = Vector2( 4, 4 )
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 1
 
-[sub_resource type="Curve" id=5]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.818182, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=6]
-curve = SubResource( 5 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 1
 emission_sphere_radius = 1.0
 flag_disable_z = true
@@ -36,7 +36,7 @@ angular_velocity = 30.0
 orbit_velocity = 0.1
 orbit_velocity_random = 0.0
 scale = 0.05
-scale_curve = SubResource( 6 )
+scale_curve = SubResource( 5 )
 color = Color( 0.914063, 0.0749817, 0.0749817, 1 )
 
 [node name="Note" type="Area2D" groups=[
@@ -76,7 +76,6 @@ amount = 12
 lifetime = 0.8
 one_shot = true
 explosiveness = 1.0
-visibility_rect = Rect2( -100, -100, 200, 200 )
-process_material = SubResource( 4 )
+process_material = SubResource( 6 )
 texture = ExtResource( 3 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

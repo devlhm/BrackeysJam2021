@@ -1,28 +1,54 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Conductor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Rythm.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Game Over.tscn" type="PackedScene" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends ProgressBar
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [node name="Rythm" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Conductor" parent="." instance=ExtResource( 1 )]
-bpm = 115
+pause_mode = 1
+stream = null
+bus = "Music"
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
 position = Vector2( 600, 680 )
 input = "left"
 
 [node name="Button2" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
 position = Vector2( 800, 680 )
 input = "right"
 
 [node name="Button3" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
 position = Vector2( 700, 680 )
 input = "top"
 
 [node name="Label" type="Label" parent="."]
+pause_mode = 1
 margin_left = 353.553
 margin_top = 550.129
 margin_right = 393.553
@@ -32,6 +58,7 @@ __meta__ = {
 }
 
 [node name="Combo" type="Label" parent="."]
+pause_mode = 1
 margin_left = 412.95
 margin_top = 485.075
 margin_right = 452.95
@@ -39,5 +66,24 @@ margin_bottom = 499.075
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HPBar" type="ProgressBar" parent="."]
+pause_mode = 1
+margin_left = 238.904
+margin_top = 404.787
+margin_right = 462.904
+margin_bottom = 418.787
+value = 50.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="HPBar"]
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = "SFX"
+
+[node name="GameOverLayer" parent="." instance=ExtResource( 4 )]
+pause_mode = 2
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
-[connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

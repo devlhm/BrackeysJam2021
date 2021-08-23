@@ -99,5 +99,4 @@ bus = "SFX"
 autoplay = "BlinkingLabel"
 anims/BlinkingLabel = SubResource( 2 )
 anims/Start = SubResource( 3 )
-
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
