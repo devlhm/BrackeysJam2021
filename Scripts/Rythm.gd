@@ -146,7 +146,7 @@ func miss():
 	
 
 func update_hp_bar():
-	hp = clamp(hp, hp_bar.min_value, hp_bar.min_value)
+	hp = clamp(hp, hp_bar.min_value, hp_bar.max_value)
 	bar_tween.interpolate_property(hp_bar, "value", hp_bar.value, hp, .5, Tween.EASE_OUT)
 	bar_tween.start()
 
