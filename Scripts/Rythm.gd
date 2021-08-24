@@ -34,12 +34,14 @@ var pattern
 
 var lane = 0
 var note = load("res://Scenes/Note.tscn")
+var filter = load("res://Sounds/Filter.tres")
 var instance
+var climax : bool = false
 
-var lanes = [Vector2(600, SPAWN_Y), Vector2(700, SPAWN_Y), Vector2(800, SPAWN_Y)]
+var lanes = [Vector2(560, SPAWN_Y), Vector2(680, SPAWN_Y), Vector2(800, SPAWN_Y)]
 var lane_amount = lanes.size()
 
-export var miss_damage = 3
+export var miss_damage : float = 3
 
 func _ready():
 	randomize()
@@ -55,9 +57,14 @@ func _input(event):
 	if event.is_action("escape"):
 		if get_tree().change_scene("res://Scenes/Menu.tscn") != OK:
 			print ("Error changing scene to Menu")
+			
+	if event.is_action_pressed("supress"):
+		AudioServer.add_bus_effect(2, filter, 0)
+	if event.is_action_released("supress"):
+		AudioServer.remove_bus_effect(2, 0)
 
 func _on_Conductor_beat(position_beats, position_measure):
-	Global.camera.shake(30, .1, 30)
+	Global.camera.zoom_cam(.002, .05)
 	
 	print("measure: " + str(position_measure))
 	print("beat: " + str(position_beats))
@@ -70,6 +77,14 @@ func _on_Conductor_beat(position_beats, position_measure):
 	pattern = FirstSong.notes.get(pattern_beats[pattern_index])
 	if pattern:
 		_spawn_notes(pattern[position_measure - 1])
+		
+	if position_beats == FirstSong.neighbor_start:
+		$Neighbor.start()
+	elif position_beats == FirstSong.neighbor_end:
+		$Neighbor.end()
+	
+	if position_beats == FirstSong.climax:
+		enter_climax()
 
 func _spawn_notes(to_spawn):
 	if(to_spawn > 0):
@@ -79,7 +94,7 @@ func _spawn_notes(to_spawn):
 			
 			while(i < to_spawn):
 				instance = note.instance()
-				instance.initialize(i)
+				instance.initialize(lanes[lane], lane, DIST_TO_TARGET, climax)
 				add_child(instance)
 				i += 1
 		else:
@@ -93,7 +108,7 @@ func _spawn_notes(to_spawn):
 						break
 
 				instance = note.instance()
-				instance.initialize(lanes[lane], DIST_TO_TARGET)
+				instance.initialize(lanes[lane], lane, DIST_TO_TARGET, climax)
 				add_child(instance)
 				i += 1
 
@@ -134,7 +149,8 @@ func miss():
 	
 	hp -= miss_damage
 	update_hp_bar()
-	Global.camera.shake(100, .5, 100)
+#	Global.camera.shake(100, .5, 100)
+	$Glitch._start()
 	
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
@@ -142,7 +158,7 @@ func miss():
 	$SFXPlayer.play()
 	
 	if hp <= 0:
-		game_over()
+		$GameOverLayer/Control.start()
 	
 
 func update_hp_bar():
@@ -150,11 +166,9 @@ func update_hp_bar():
 	bar_tween.interpolate_property(hp_bar, "value", hp_bar.value, hp, .5, Tween.EASE_OUT)
 	bar_tween.start()
 
-func game_over():
-	var game_over_tween = $GameOverLayer/Tween
-	var game_over_control = $GameOverLayer/Control
+func enter_climax():
+	climax = true
 	
-	game_over_tween.interpolate_property(game_over_control, "rect_position", Vector2(0, game_over_control.rect_position.y), Vector2.ZERO, 1)
-	game_over_tween.start()
-	game_over_control.set_process_unhandled_input(true)
-	get_tree().paused = true
+	for button in get_tree().get_nodes_in_group("button"):
+		button.frame = 2
+	

@@ -1,47 +1,57 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://icon2.png" type="Texture" id=2]
+[ext_resource path="res://Textures/normal_botao_pressed.png" type="Texture" id=1]
+[ext_resource path="res://Textures/ultra_botao_pressed.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Button.gd" type="Script" id=3]
+[ext_resource path="res://Textures/ultra_botao.png" type="Texture" id=4]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/normal_botao.png-0755c2d0f545ba7dae414b2f973fb571.stex"
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ SubResource( 1 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 12 )
-
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 4, 8 )
+extents = Vector2( 60, 115 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 2 )
+extents = Vector2( 60, 80 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 60, 30 )
 
 [node name="Button" type="AnimatedSprite"]
-frames = SubResource( 1 )
+modulate = Color( 1.5, 1.5, 1.5, 1 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 2
+z_as_relative = false
+frames = SubResource( 2 )
 script = ExtResource( 3 )
 
 [node name="OkayArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OkayArea"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="GoodArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoodArea"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="PerfectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PerfectArea"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="PushTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.15
+one_shot = true
 [connection signal="area_entered" from="OkayArea" to="." method="_on_OkayArea_area_entered"]
 [connection signal="area_exited" from="OkayArea" to="." method="_on_OkayArea_area_exited"]
 [connection signal="area_entered" from="GoodArea" to="." method="_on_GoodArea_area_entered"]

@@ -3,6 +3,11 @@ extends Node2D
 var bpm = 115
 var measures = 4
 
+var neighbor_start = 12
+var neighbor_end = 380
+
+var climax = 400
+
 var stream_path = "res://Sounds/Sounds_song.ogg"
 
 var notes = {

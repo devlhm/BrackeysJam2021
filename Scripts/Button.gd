@@ -29,7 +29,10 @@ func _unhandled_input(event):
 			else:
 				get_parent().increment_score(0)
 		if event.is_action_pressed(input):
-			frame = 1
+			if get_parent().climax:
+				frame = 3
+			else:
+				frame = 1
 		elif event.is_action_released(input):
 			$PushTimer.start()
 
@@ -67,7 +70,10 @@ func _on_OkayArea_area_exited(area):
 
 
 func _on_PushTimer_timeout():
-	frame = 0
+	if(get_parent().climax):
+		frame = 2
+	else:
+		frame = 0
 
 
 func _reset():

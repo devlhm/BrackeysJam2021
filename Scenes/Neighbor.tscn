@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Neighbor.gd" type="Script" id=1]
+
+[node name="Neighbor" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="NeighborIndicator" type="Label" parent="."]
+visible = false
+margin_left = 1031.05
+margin_top = 292.643
+margin_right = 1146.05
+margin_bottom = 306.643
+text = "Neighbor Angwy!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
