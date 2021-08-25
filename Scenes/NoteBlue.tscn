@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Note.gd" type="Script" id=2]
+[ext_resource path="res://Textures/scorch_01.png" type="Texture" id=3]
+[ext_resource path="res://Textures/normal_blue.png" type="Texture" id=7]
+[ext_resource path="res://Textures/ultra_blue.png" type="Texture" id=11]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.351136 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.392157, 0.784314, 1, 0, 0.396078, 0.784314, 1, 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=4]
+blend_mode = 1
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.818182, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.1
+angular_velocity = 30.0
+orbit_velocity = 0.1
+orbit_velocity_random = 0.0
+scale = 0.05
+scale_curve = SubResource( 6 )
+color = Color( 0.914063, 0.0749817, 0.0749817, 1 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 45, 30 )
+
+[node name="Note" type="Area2D" groups=[
+"note",
+]]
+scale = Vector2( 0.35, 0.35 )
+z_index = 1
+z_as_relative = false
+script = ExtResource( 2 )
+
+[node name="Trail" type="Line2D" parent="."]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
+show_behind_parent = true
+points = PoolVector2Array( 0, -800, 0, -50 )
+width = 150.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.4, 0.501961, 1, 1 )
+gradient = SubResource( 2 )
+joint_mode = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1.6, 1.6, 1.6, 1 )
+frames = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+rect_rotation = 0.786878
+rect_scale = Vector2( 3, 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles2D" type="Particles2D" parent="."]
+material = SubResource( 4 )
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 7 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource( 8 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

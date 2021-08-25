@@ -18,13 +18,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 60, 115 )
+extents = Vector2( 60, 100 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 60, 80 )
+extents = Vector2( 60, 55 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 60, 30 )
+extents = Vector2( 60, 3 )
 
 [node name="Button" type="AnimatedSprite"]
 modulate = Color( 1.5, 1.5, 1.5, 1 )

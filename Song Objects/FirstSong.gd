@@ -3,6 +3,8 @@ extends Node2D
 var bpm = 115
 var measures = 4
 
+var song_start = 8
+
 var neighbor_start = 12
 var neighbor_end = 380
 

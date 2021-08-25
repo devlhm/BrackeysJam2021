@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.351136 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.392157, 1, 0.470588, 0, 0.392157, 1, 0.470588, 1 )
+
+[node name="Trail" type="Line2D"]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
+show_behind_parent = true
+points = PoolVector2Array( 0, -800, 0, -50 )
+width = 150.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.4, 0.501961, 1, 1 )
+gradient = SubResource( 2 )
+joint_mode = 1

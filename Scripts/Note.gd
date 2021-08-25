@@ -3,34 +3,30 @@ extends Area2D
 var speed = 0
 var hit = false
 
-
-func _ready():
-	pass
-
-
 func _physics_process(delta):
+	
 	if !hit:
 		global_position.y += speed * delta
 		if position.y > 750:
 			queue_free()
-			get_parent().miss()
+			get_parent().miss(get_parent().miss_damage)
 	else:
 		$Node2D.position.y -= speed * delta
 
 
-func initialize(lane, lane_index, dist_to_target, climax):
-	var frame = lane_index
+func initialize(lane, lane_index, dist_to_target, climax):	
 	if climax:
-		frame += 5
+		$AnimatedSprite.frame = 1
 	
 	global_position = lane
 	speed = dist_to_target / 2.0
-	$AnimatedSprite.frame = frame
 
 
 func destroy(score):
 	$Particles2D.emitting = true
 	$AnimatedSprite.visible = false
+	$Trail.visible = false
+	$CollisionShape2D.disabled = true
 	$Timer.start()
 	hit = true
 	if score == 3:

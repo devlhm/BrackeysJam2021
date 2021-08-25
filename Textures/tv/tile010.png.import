@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/concept.png-5bc72e129abfd3795af3f688e3413070.stex"
+path="res://.import/tile010.png-debeef24881700848a3684e061b1fa88.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/concept.png"
-dest_files=[ "res://.import/concept.png-5bc72e129abfd3795af3f688e3413070.stex" ]
+source_file="res://Textures/tv/tile010.png"
+dest_files=[ "res://.import/tile010.png-debeef24881700848a3684e061b1fa88.stex" ]
 
 [params]
 
