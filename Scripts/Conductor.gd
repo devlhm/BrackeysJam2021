@@ -17,14 +17,22 @@ var time_off_beat = 0.0
 
 signal beat(position_beats, position_measure)
 
-
-func _ready():
-	bpm = FirstSong.bpm
-	measures = FirstSong.measures
+func initialize(song):
+	bpm = song.bpm
+	measures = song.measures
 	sec_per_beat = 60.0 / bpm
 	
-	stream = load(FirstSong.stream_path)
+	stream = load(song.stream_path)
+	
+	song_position = 0.0
+	song_position_in_beats = 0
+	sec_per_beat
+	last_reported_beat = 0
+	beats_before_start = 0
+	measure = 1
 
+	closest = 0
+	time_off_beat = 0.0
 
 func _physics_process(_delta):
 	if playing:
@@ -32,7 +40,6 @@ func _physics_process(_delta):
 		song_position -= AudioServer.get_output_latency()
 		song_position_in_beats = int(floor(song_position / sec_per_beat)) + beats_before_start
 		_report_beat()
-
 
 func _report_beat():
 	if last_reported_beat < song_position_in_beats:
@@ -42,18 +49,15 @@ func _report_beat():
 		last_reported_beat = song_position_in_beats
 		measure += 1
 
-
 func play_with_beat_offset(num):
 	beats_before_start = num
 	$StartTimer.wait_time = sec_per_beat
 	$StartTimer.start()
 
-
 func closest_beat(nth):
 	closest = int(round((song_position / sec_per_beat) / nth) * nth) 
 	time_off_beat = abs(closest * sec_per_beat - song_position)
 	return Vector2(closest, time_off_beat)
-
 
 func play_from_beat(beat, offset):
 	play()
@@ -61,6 +65,8 @@ func play_from_beat(beat, offset):
 	beats_before_start = offset
 	measure = beat % measures
 
+func stop_song():
+	stop()
 
 func _on_StartTimer_timeout():
 	song_position_in_beats += 1
