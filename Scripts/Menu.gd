@@ -1,16 +1,18 @@
 extends Control
 
-onready var animationPlayer : AnimationPlayer = $AnimationPlayer
-
 func _ready():
 	pass
-	
-func _process(delta):
-	if Input.is_action_just_pressed("start") and animationPlayer.current_animation != "Start":
-		$SFXPlayer.play(0)
-		animationPlayer.play("Start")
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Start":
-		get_tree().change_scene("res://Scenes/Menu.tscn")
+
+
+func _on_Button_pressed(button):
+	if button == "Start":
+		get_tree().change_scene("res://Scenes/MainScene.tscn")
+	elif button == "Options":
+		get_tree().change_scene("res://Scenes/OptionsMenu.tscn")
+	elif button == "Credits":
+		pass
+	elif button == "Quit":
+		get_tree().quit()
 	pass
+

@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/PressStart.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/keyboard.ogg" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="Cutscene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.0
+margin_top = 50.0
+margin_right = -70.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+margin_right = 1226.0
+margin_bottom = 668.0
+custom_constants/separation = 50
+
+[node name="ImageContainer" type="CenterContainer" parent="Margin/VBox"]
+margin_right = 1226.0
+margin_bottom = 360.0
+
+[node name="Image" type="TextureRect" parent="Margin/VBox/ImageContainer"]
+margin_left = 253.0
+margin_right = 973.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 720, 360 )
+expand = true
+
+[node name="TextContainer" type="HBoxContainer" parent="Margin/VBox"]
+margin_top = 410.0
+margin_right = 1226.0
+margin_bottom = 668.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Margin/VBox/TextContainer"]
+margin_left = 253.0
+margin_right = 973.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 720, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 1 )
+custom_constants/line_separation = 15
+bbcode_enabled = true
+scroll_active = false
+
+[node name="LetterTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="PageTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="KeyboardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -12.0
+bus = "SFX"
+
+[connection signal="timeout" from="LetterTimer" to="." method="_on_LetterTimer_timeout"]
+[connection signal="timeout" from="PageTimer" to="." method="_on_PageTimer_timeout"]
