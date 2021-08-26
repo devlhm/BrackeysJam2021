@@ -4,11 +4,12 @@ var bpm = 115
 var measures = 4
 
 var song_start = 8
+var song_end = 406
 
 var neighbor_start = 12
 var neighbor_end = 380
 
-var climax = 400
+var climax = -1
 
 var stream_path = "res://Sounds/Sounds_song.ogg"
 

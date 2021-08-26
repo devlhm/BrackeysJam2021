@@ -1,13 +1,202 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Conductor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Rhythm.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Game Over.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Glitch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Textures/HUD/4notas.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Neighbor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Textures/HUD/3notas.png" type="Texture" id=8]
+[ext_resource path="res://Textures/HUD/5notas.png" type="Texture" id=9]
+[ext_resource path="res://Textures/HUD/chaos cheio.png" type="Texture" id=10]
+[ext_resource path="res://Textures/HUD/chaos zerado.png" type="Texture" id=11]
+[ext_resource path="res://Textures/HUD/chaos vazio.png" type="Texture" id=12]
+[ext_resource path="res://Textures/HUD/combos.png" type="Texture" id=13]
+[ext_resource path="res://Textures/HUD/pontos.png" type="Texture" id=14]
+[ext_resource path="res://Fonts/GROBOLD.ttf" type="DynamicFontData" id=15]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "add_lane_4"
+length = 1.1
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.201723, -44.2993, -60, -0.22367, 1.82934, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("../Button4:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 863, -0.25, 0, 0.25, 0, 863, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("../Button4:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 860, -0.25, 0, 0.25, 0, 680, -0.735111, 12.0695, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../Button4")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "button", false ],
+"method": "add_to_group"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "get_lanes"
+}, {
+"args": [ 4 ],
+"method": "reparent_button"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "add_lane_5"
+length = 1.1
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -60, 0, 0, 0, 0, -120, 0, 0, 0, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("../Button5:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 923, -0.25, 0, 0.25, 0, 923, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("../Button5:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 860, -0.25, 0, 0.25, 0, 680, -0.735111, 12.0695, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../Button5")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "button", false ],
+"method": "add_to_group"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "get_lanes"
+}, {
+"args": [ 5 ],
+"method": "reparent_button"
+} ]
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="GDScript" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "move"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 838, -0.25, 0, 0.25, 0, 838, -0.25, 0, 0.25, 0, 70, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 2 )
+}
 
 [node name="Rythm" type="Node2D"]
 script = ExtResource( 2 )
@@ -17,78 +206,60 @@ miss_damage = 1.5
 [node name="Conductor" parent="." instance=ExtResource( 1 )]
 pause_mode = 1
 
+[node name="Glitch" parent="." instance=ExtResource( 5 )]
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+light_mask = 2
 margin_left = 490.0
-margin_right = 926.0
+margin_right = 873.0
 margin_bottom = 768.0
-color = Color( 0, 0, 0, 0.27451 )
+color = Color( 0, 0, 0, 0.458824 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" parent="." groups=[
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button" parent="Buttons" groups=[
 "button",
 ] instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( 580, 680 )
-input = "j"
+position = Vector2( 563, 680 )
+input = "button1"
 
-[node name="Button2" parent="." groups=[
+[node name="Button2" parent="Buttons" groups=[
 "button",
 ] instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( 700, 680 )
-input = "k"
+position = Vector2( 683, 680 )
+input = "button2"
 
-[node name="Button3" parent="." groups=[
+[node name="Button3" parent="Buttons" groups=[
 "button",
 ] instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( 820, 680 )
-input = "l"
+position = Vector2( 803, 680 )
+input = "button3"
 
-[node name="Label" type="Label" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons"]
+anims/add_lane_4 = SubResource( 1 )
+anims/add_lane_5 = SubResource( 2 )
+
+[node name="Button4" parent="." instance=ExtResource( 3 )]
 pause_mode = 1
-margin_left = 353.553
-margin_top = 550.129
-margin_right = 393.553
-margin_bottom = 564.129
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+position = Vector2( 863, 860 )
+input = "button4"
 
-[node name="Combo" type="Label" parent="."]
-pause_mode = 1
-margin_left = 412.95
-margin_top = 485.075
-margin_right = 452.95
-margin_bottom = 499.075
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HPBar" type="ProgressBar" parent="."]
-pause_mode = 1
-margin_left = 238.904
-margin_top = 404.787
-margin_right = 462.904
-margin_bottom = 418.787
-value = 50.0
-script = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="HPBar"]
+[node name="Button5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 923, 860 )
+input = "button5"
 
 [node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
 bus = "SFX"
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
-
-[node name="Glitch" parent="." instance=ExtResource( 5 )]
 
 [node name="Neighbor" parent="." instance=ExtResource( 7 )]
 visit_chance = 0
@@ -97,5 +268,277 @@ visit_chance = 0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Lane" type="Node2D" parent="."]
+visible = false
+position = Vector2( 797, 384 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Lane"]
+position = Vector2( -0.594604, 0 )
+frames = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreIndicator" type="Control" parent="CanvasLayer"]
+margin_left = 1010.65
+margin_top = 317.194
+margin_right = 1010.65
+margin_bottom = 317.194
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreBackground" type="Sprite" parent="CanvasLayer/ScoreIndicator"]
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 14 )
+
+[node name="ComboStar" type="Sprite" parent="CanvasLayer/ScoreIndicator"]
+modulate = Color( 0.94902, 0.635294, 0.145098, 1 )
+position = Vector2( 6.86877, -80.7567 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 13 )
+
+[node name="Score" type="Label" parent="CanvasLayer/ScoreIndicator"]
+pause_mode = 1
+modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
+margin_left = -96.4092
+margin_top = -27.9373
+margin_right = 85.5908
+margin_bottom = 27.0627
+custom_fonts/font = SubResource( 4 )
+text = "13645"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Combo_Title" type="Label" parent="CanvasLayer/ScoreIndicator"]
+pause_mode = 1
+margin_left = -51.3675
+margin_top = -63.2957
+margin_right = 144.633
+margin_bottom = -11.2957
+rect_rotation = -18.4557
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.337255, 0.2, 0.992157, 1 )
+text = "Combo"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Combo" type="Label" parent="CanvasLayer/ScoreIndicator"]
+pause_mode = 1
+margin_left = -89.8988
+margin_top = -115.743
+margin_right = 88.1012
+margin_bottom = -63.7431
+rect_rotation = -18.4557
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.337255, 0.2, 0.992157, 1 )
+text = "41x"
+valign = 2
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPBar" type="TextureProgress" parent="CanvasLayer"]
+pause_mode = 1
+margin_left = 928.358
+margin_top = 363.921
+margin_right = 1128.36
+margin_bottom = 443.921
+value = 50.0
+texture_under = ExtResource( 11 )
+texture_over = ExtResource( 12 )
+texture_progress = ExtResource( 10 )
+nine_patch_stretch = true
+script = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="CanvasLayer/HPBar"]
+
+[node name="ResultsScreen" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 400.0
+margin_top = 838.0
+margin_right = -394.0
+margin_bottom = 642.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ResultsScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.270588, 0, 0.337255, 0.87451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 432.0
+margin_top = 133.0
+margin_right = 492.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 7 )
+text = "aaaaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CanvasLayer/ResultsScreen"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -84.0
+margin_top = 44.3621
+margin_right = 84.0
+margin_bottom = 84.3621
+custom_fonts/font = SubResource( 9 )
+text = "RESULTS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreTitle" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 70.0
+margin_top = 133.0
+margin_right = 130.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 7 )
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxComboLabel" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 432.0
+margin_top = 173.0
+margin_right = 492.0
+margin_bottom = 193.0
+custom_fonts/font = SubResource( 7 )
+text = "aaaaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxComboTitle" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 70.0
+margin_top = 173.0
+margin_right = 187.0
+margin_bottom = 193.0
+custom_fonts/font = SubResource( 7 )
+text = "Max Combo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreatLabel" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 432.0
+margin_top = 233.0
+margin_right = 492.0
+margin_bottom = 253.0
+custom_fonts/font = SubResource( 7 )
+text = "aaaaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreatTitle" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 70.0
+margin_top = 233.0
+margin_right = 130.0
+margin_bottom = 276.0
+custom_fonts/font = SubResource( 7 )
+text = "Great"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoodLabel" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 432.0
+margin_top = 273.0
+margin_right = 492.0
+margin_bottom = 293.0
+custom_fonts/font = SubResource( 7 )
+text = "aaaaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoodTitle" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 70.0
+margin_top = 273.0
+margin_right = 130.0
+margin_bottom = 316.0
+custom_fonts/font = SubResource( 7 )
+text = "Good"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkayLabel" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 432.0
+margin_top = 313.0
+margin_right = 492.0
+margin_bottom = 333.0
+custom_fonts/font = SubResource( 7 )
+text = "aaaaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkayTitle" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 70.0
+margin_top = 313.0
+margin_right = 130.0
+margin_bottom = 356.0
+custom_fonts/font = SubResource( 7 )
+text = "Okay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MissedLabel" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 432.0
+margin_top = 353.0
+margin_right = 492.0
+margin_bottom = 373.0
+custom_fonts/font = SubResource( 7 )
+text = "aaaaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MissedTitle" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 70.0
+margin_top = 353.0
+margin_right = 136.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 7 )
+text = "Missed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 254.946
+margin_top = 490.497
+margin_right = 499.946
+margin_bottom = 516.497
+custom_fonts/font = SubResource( 7 )
+text = "Press Enter to Continue..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ResultsScreen"]
+anims/move = SubResource( 8 )
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
