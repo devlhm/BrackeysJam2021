@@ -4,10 +4,11 @@
 
 [node name="Song" type="Node2D"]
 script = ExtResource( 1 )
-bpm = 100
-measures = 100
-song_start = 100
-song_end = 100
-neighbor_start = 100
-neighbor_end = 100
-climax = 100
+bpm = 105
+measures = 4
+song_start = 4
+song_end = 500
+neighbor_start = 12
+neighbor_end = 500
+climax = 500
+stream_path = "res://Sounds/Songs/Song2_-_False_Victory.ogg"

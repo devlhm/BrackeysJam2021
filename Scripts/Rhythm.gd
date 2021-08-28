@@ -94,7 +94,7 @@ func _process(delta):
 		tv_screen.animation = "default"
 		$SFXPlayer.play_footsteps()
 
-func start_song(offset : int):
+func start_song(offset : int = 4):
 	$Conductor.initialize(Global.songs[song_index])
 	initialize()
 	# if song_index == 0:
