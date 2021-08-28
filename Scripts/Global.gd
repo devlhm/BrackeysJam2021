@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var score = 0
 var combo = 0
 var great = 0
@@ -10,6 +9,9 @@ var missed = 0
 var grade = "NA"
 
 var camera = null
+var song_index = 0
+
+var songs = [load("res://Song Objects/FirstSong.tscn").instance(), load("res://Song Objects/SecondSong.tscn").instance(), load("res://Song Objects/ThirdSong.tscn").instance()]
 
 func set_score(new):
 	score = new

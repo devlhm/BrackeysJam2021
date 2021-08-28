@@ -1,0 +1,111 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Textures/Character/versão 1/idle/idle_0.png" type="Texture" id=1]
+[ext_resource path="res://Textures/Character/versão 1/idle/idle_1.png" type="Texture" id=2]
+[ext_resource path="res://Textures/Character/versão 1/guitar/guitar_3.png" type="Texture" id=3]
+[ext_resource path="res://Textures/Character/versão 1/transition/transition_0.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Character/versão 1/transition/transition_1.png" type="Texture" id=5]
+[ext_resource path="res://Textures/Character/versão 1/transition/transition_2.png" type="Texture" id=6]
+[ext_resource path="res://Textures/Character/versão 1/transition/transition_3.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Character/versão 1/idle/idle_3.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Character/versão 1/guitar/guitar_0.png" type="Texture" id=9]
+[ext_resource path="res://Textures/Character/versão 1/guitar/guitar_1.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Character/versão 1/idle/idle_2.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Character/versão 1/guitar/guitar_2.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=13]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "transition",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "guitar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "transition_back",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=9]
+resource_name = "transit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "transition", "guitar" ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "transit_back"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "transition_back", "idle" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AnimatedSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+
+[node name="Player" type="Node2D" groups=[
+"player",
+]]
+script = ExtResource( 13 )
+
+[node name="Player1" type="AnimatedSprite" parent="."]
+frames = SubResource( 8 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="Player2" type="AnimatedSprite" parent="."]
+visible = false
+modulate = Color( 0.772549, 0, 0, 1 )
+frames = SubResource( 8 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="Player3" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 8 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/transit = SubResource( 9 )
+anims/transit_back = SubResource( 10 )

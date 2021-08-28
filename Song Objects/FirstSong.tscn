@@ -1,0 +1,4488 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Song.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Note.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TrailNote.gd" type="Script" id=3]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="RectangleShape2D" id=2]
+resource_local_to_scene = true
+extents = Vector2( 10, 500 )
+
+[sub_resource type="RectangleShape2D" id=3]
+resource_local_to_scene = true
+extents = Vector2( 10, 214.285 )
+
+[sub_resource type="RectangleShape2D" id=4]
+resource_local_to_scene = true
+extents = Vector2( 10, 100 )
+
+[node name="Song" type="Node2D"]
+script = ExtResource( 1 )
+bpm = 75
+measures = 4
+song_start = 4
+song_end = 257
+neighbor_start = 12
+neighbor_end = 200
+climax = 218
+stream_path = "res://Sounds/Songs/Song1_-_Behind_a_Smile.ogg"
+
+[node name="Note5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -870 )
+
+[node name="Note21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -970 )
+
+[node name="Note22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -1070 )
+
+[node name="Note6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -1170 )
+
+[node name="Note7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -1270 )
+
+[node name="Note23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -1370 )
+
+[node name="Note24" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -1470 )
+
+[node name="Note8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -1570 )
+
+[node name="Note9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -1670 )
+
+[node name="Note25" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -1770 )
+
+[node name="Note26" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -1870 )
+
+[node name="Note10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -1970 )
+
+[node name="Note11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -2070 )
+
+[node name="Note27" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -2170 )
+
+[node name="Note28" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -2270 )
+
+[node name="Note12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -2370 )
+
+[node name="Note13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -2470 )
+
+[node name="Note29" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -2570 )
+
+[node name="Note30" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -2670 )
+
+[node name="Note14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -2770 )
+
+[node name="Note15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -2870 )
+
+[node name="Note31" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -2970 )
+
+[node name="Note32" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -3070 )
+
+[node name="Note16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -3170 )
+
+[node name="Note17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -3270 )
+
+[node name="Note18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -3470 )
+
+[node name="Note19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -3670 )
+
+[node name="Note20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -3870 )
+
+[node name="Note65" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -3370 )
+
+[node name="Note66" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -3570 )
+
+[node name="Note67" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -3770 )
+
+[node name="Note68" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -3920 )
+
+[node name="Note81" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -10470 )
+
+[node name="Note82" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -10520 )
+
+[node name="Note83" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -10570 )
+
+[node name="Note84" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -10620 )
+
+[node name="Note85" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -10670 )
+
+[node name="Note86" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -10920 )
+
+[node name="Note87" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -10970 )
+
+[node name="Note88" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -11020 )
+
+[node name="Note89" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -11070 )
+
+[node name="Note90" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -11120 )
+
+[node name="Note91" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -11170 )
+
+[node name="Note92" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -11220 )
+
+[node name="Note93" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -11270 )
+
+[node name="Note104" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -13670 )
+
+[node name="Note105" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -13720 )
+
+[node name="Note106" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -13770 )
+
+[node name="Note107" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -13820 )
+
+[node name="Note108" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -13870 )
+
+[node name="Note109" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -13920 )
+
+[node name="Note110" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -13970 )
+
+[node name="Note111" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -14020 )
+
+[node name="Note112" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -14070 )
+
+[node name="Note131" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -15020 )
+
+[node name="Note132" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -15070 )
+
+[node name="Note133" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -15120 )
+
+[node name="Note134" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -15170 )
+
+[node name="Note135" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -15220 )
+
+[node name="Note137" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -18020 )
+
+[node name="Note138" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -18120 )
+
+[node name="Note140" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -18820 )
+
+[node name="Note141" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -18920 )
+
+[node name="Note142" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -19620 )
+
+[node name="Note143" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -19720 )
+
+[node name="Note144" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -19820 )
+
+[node name="Note146" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -21320 )
+
+[node name="Note251" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -21270 )
+
+[node name="Note147" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -21370 )
+
+[node name="Note148" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -21420 )
+
+[node name="Note150" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -21895 )
+
+[node name="Note151" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -21920 )
+
+[node name="Note153" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -21845 )
+
+[node name="Note152" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -21970 )
+
+[node name="Note252" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -22020 )
+
+[node name="Note154" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -22720 )
+
+[node name="Note155" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -22870 )
+
+[node name="Note156" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -23020 )
+
+[node name="Note157" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -23170 )
+
+[node name="Note158" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -23320 )
+
+[node name="Note159" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -23420 )
+
+[node name="Note160" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -23520 )
+
+[node name="Note139" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -18220 )
+
+[node name="Note113" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -14120 )
+
+[node name="Note114" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -14170 )
+
+[node name="Note115" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -14220 )
+
+[node name="Note116" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -14270 )
+
+[node name="Note117" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -14320 )
+
+[node name="Note118" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -14370 )
+
+[node name="Note119" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -14420 )
+
+[node name="Note120" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -14470 )
+
+[node name="Note121" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -14520 )
+
+[node name="Note122" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -14570 )
+
+[node name="Note123" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -14620 )
+
+[node name="Note124" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -14670 )
+
+[node name="Note125" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -14720 )
+
+[node name="Note126" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -14770 )
+
+[node name="Note127" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -14820 )
+
+[node name="Note128" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -14870 )
+
+[node name="Note129" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -14920 )
+
+[node name="Note130" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -14970 )
+
+[node name="Note94" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -11570 )
+
+[node name="Note95" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -11620 )
+
+[node name="Note96" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -11670 )
+
+[node name="Note97" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -11720 )
+
+[node name="Note98" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -11770 )
+
+[node name="Note99" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -11820 )
+
+[node name="Note100" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -12620 )
+
+[node name="Note101" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -12670 )
+
+[node name="Note103" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -13370 )
+
+[node name="Note102" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -12720 )
+
+[node name="Trail27" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -10720 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.713, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail27" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail27/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail27" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail28" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -11320 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.141, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail28" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail28/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail28" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail29" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -11870 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.711, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail29" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail29/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail29" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail31" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -12070 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail31" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail31/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail31" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail32" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -12220 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail32" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail32/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail32" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail33" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -12370 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail33" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail33/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail33" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail34" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -12520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( -0.000732422, -142.832, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail34" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail34/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail34" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail37" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -12820 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -714.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail37" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail37/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail37" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail38" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -13170 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.145, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail38" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail38/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail38" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail40" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -13470 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail40" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail40/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail40" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail41" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -15270 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1142.86, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail41" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail41/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail41" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail52" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -21470 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -642.855, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail52" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail52/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail52" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail53" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -22120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1500, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail53" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail53/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail53" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail69" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -22270 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1071.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail69" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail69/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail69" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail46" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -16070 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail46" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail46/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail46" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail47" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -16270 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.141, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail47" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail47/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail47" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail48" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -16470 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail48" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail48/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail48" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail49" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -16670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.141, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail49" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail49/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail49" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail42" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -15420 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -714.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail42" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail42/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail42" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail50" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -17620 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail50" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail50/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail50" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail51" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -17820 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.145, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail51" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail51/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail51" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail55" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -18345 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail55" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail55/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail55" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail59" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -19120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail59" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail59/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail59" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail61" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -19920 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -642.855, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail61" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail61/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail61" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail65" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -20820 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail65" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail65/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail65" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail66" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -20970 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail66" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail66/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail66" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail67" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -21070 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail67" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail67/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail67" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail68" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -20520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail68" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail68/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail68" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail78" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -20320 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail78" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail78/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail78" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail64" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -20720 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail64" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail64/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail64" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail60" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -19420 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.711, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail60" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail60/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail60" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail57" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -18620 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.07, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail57" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail57/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail57" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail58" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -19020 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail58" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail58/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail58" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Note145" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -37220 )
+
+[node name="Note149" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -37320 )
+
+[node name="Note254" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -38020 )
+
+[node name="Note255" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -38120 )
+
+[node name="Note256" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -38820 )
+
+[node name="Note257" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -38920 )
+
+[node name="Note285" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -39420 )
+
+[node name="Note258" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -39020 )
+
+[node name="Note259" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -40520 )
+
+[node name="Note271" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -40470 )
+
+[node name="Note272" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -40570 )
+
+[node name="Note273" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -40620 )
+
+[node name="Note274" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -40995 )
+
+[node name="Note275" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -41020 )
+
+[node name="Note276" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -40945 )
+
+[node name="Note277" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -41070 )
+
+[node name="Note278" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -41120 )
+
+[node name="Note279" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -41820 )
+
+[node name="Note280" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -41970 )
+
+[node name="Note281" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -42120 )
+
+[node name="Note282" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -42270 )
+
+[node name="Note283" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -42420 )
+
+[node name="Note284" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -42520 )
+
+[node name="Note286" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -37420 )
+
+[node name="Trail54" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -40670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -642.855, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail54" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail54/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail54" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail56" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -41220 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1500, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail56" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail56/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail56" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail87" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -41370 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1071.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail87" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail87/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail87" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail62" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -36820 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail62" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail62/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail62" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail63" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -37020 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.145, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail63" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail63/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail63" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail125" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -37545 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail125" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail125/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail125" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail134" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -38320 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail134" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail134/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail134" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail162" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -39120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -642.855, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail162" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail162/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail162" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail163" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -40020 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail163" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail163/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail163" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail164" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -40170 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail164" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail164/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail164" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail165" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -40270 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail165" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail165/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail165" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail166" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -39695 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail166" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail166/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail166" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail167" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -39520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail167" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail167/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail167" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail168" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -39920 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail168" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail168/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail168" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail169" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -38620 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.711, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail169" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail169/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail169" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail170" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -37820 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.07, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail170" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail170/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail170" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail171" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -38220 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail171" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail171/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail171" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail114" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -42620 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1071.42, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail114" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail114/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail114" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Note205" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -43545 )
+
+[node name="Note207" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -43645 )
+
+[node name="Note211" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -44370 )
+
+[node name="Note219" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -44470 )
+
+[node name="Note227" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -45145 )
+
+[node name="Note230" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -45245 )
+
+[node name="Note231" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -45345 )
+
+[node name="Note232" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -45745 )
+
+[node name="Note233" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -46895 )
+
+[node name="Note234" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -46920 )
+
+[node name="Note235" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -46970 )
+
+[node name="Note236" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -47420 )
+
+[node name="Note237" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -47445 )
+
+[node name="Note238" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -47370 )
+
+[node name="Note239" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -47495 )
+
+[node name="Note240" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -48245 )
+
+[node name="Note242" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -48395 )
+
+[node name="Note244" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -48545 )
+
+[node name="Note246" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -48695 )
+
+[node name="Note247" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -48845 )
+
+[node name="Note248" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -48945 )
+
+[node name="Note249" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -46995 )
+
+[node name="Note250" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -43745 )
+
+[node name="Trail115" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -47070 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -714.281, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail115" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail115/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail115" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail116" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -47670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1500, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail116" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail116/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail116" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail117" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -47845 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1000, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail117" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail117/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail117" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail120" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -47545 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0.000244141, -214.262, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail120" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail120/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail120" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail121" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -43145 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -499.984, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail121" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail121/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail121" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail122" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -43245 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail122" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail122/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail122" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail123" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -43870 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.422, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail123" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail123/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail123" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail124" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -44670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail124" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail124/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail124" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail126" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -45445 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -642.855, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail126" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail126/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail126" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail127" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -46245 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -500, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail127" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail127/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail127" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail128" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -46395 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -500, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail128" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail128/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail128" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail129" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -46545 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( -0.00012207, -571.395, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail129" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail129/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail129" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail130" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -46695 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( -0.000244141, -357.102, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail130" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail130/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail130" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail131" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -45845 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail131" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail131/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail131" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail132" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -46045 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -642.855, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail132" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail132/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail132" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail133" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -44945 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.574, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail133" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail133/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail133" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail135" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -44145 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail135" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail135/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail135" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail161" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -44570 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail161" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail161/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail161" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail118" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -49045 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1642.85, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail118" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail118/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail118" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail136" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -49520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1857.14, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail136" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail136/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail136" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Note241" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -35320 )
+
+[node name="Note243" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -35620 )
+
+[node name="Note245" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -35920 )
+
+[node name="Trail43" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -15520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.574, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail43" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail43/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail43" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail44" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -15770 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( -0.00012207, -285.695, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail44" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail44/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail44" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail45" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -15920 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( -0.00012207, -285.695, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail45" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail45/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail45" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Note185" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -33520 )
+
+[node name="Note186" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -33620 )
+
+[node name="Note188" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -33720 )
+
+[node name="Note189" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -33820 )
+
+[node name="Note191" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -34020 )
+
+[node name="Note193" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -34120 )
+
+[node name="Note194" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -34220 )
+
+[node name="Note190" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -33920 )
+
+[node name="Note195" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -34320 )
+
+[node name="Note196" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -34420 )
+
+[node name="Note198" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -34520 )
+
+[node name="Note199" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -34620 )
+
+[node name="Note200" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -34820 )
+
+[node name="Note202" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -34920 )
+
+[node name="Note203" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -35020 )
+
+[node name="Note204" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -34720 )
+
+[node name="Note197" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -35120 )
+
+[node name="Note201" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -35220 )
+
+[node name="Note206" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -35420 )
+
+[node name="Note208" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -35720 )
+
+[node name="Note209" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -35820 )
+
+[node name="Note212" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -36020 )
+
+[node name="Note213" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -36120 )
+
+[node name="Note214" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -36220 )
+
+[node name="Note215" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -36320 )
+
+[node name="Note216" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -36420 )
+
+[node name="Note217" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -36520 )
+
+[node name="Note218" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -36620 )
+
+[node name="Note210" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -35520 )
+
+[node name="Note173" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -5170 )
+
+[node name="Note174" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -6870 )
+
+[node name="Note175" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -6970 )
+
+[node name="Note176" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -7070 )
+
+[node name="Note177" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -7170 )
+
+[node name="Note178" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -7570 )
+
+[node name="Note179" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -7470 )
+
+[node name="Note180" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -8020 )
+
+[node name="Note181" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -8695 )
+
+[node name="Note182" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -8770 )
+
+[node name="Note183" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -9620 )
+
+[node name="Note184" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -10420 )
+
+[node name="Note253" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -10320 )
+
+[node name="Trail89" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -4070 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.143, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail89" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail89/Area2D"]
+visible = false
+position = Vector2( 0, -214.285 )
+shape = SubResource( 3 )
+
+[node name="Note" parent="Trail89" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail90" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -4270 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.143, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail90" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail90/Area2D"]
+visible = false
+position = Vector2( 0, -215.404 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail90" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail91" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -4470 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.143, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail91" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail91/Area2D"]
+visible = false
+position = Vector2( 0, -215.404 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail91" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail92" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -4670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.143, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail92" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail92/Area2D"]
+visible = false
+position = Vector2( 0, -215.404 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail92" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail93" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -5470 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.714, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail93" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail93/Area2D"]
+visible = false
+position = Vector2( 0, -143.976 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail93" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail94" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -5670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -642.857, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail94" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail94/Area2D"]
+visible = false
+position = Vector2( 0, -322.687 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail94" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail95" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -5970 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -642.857, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail95" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail95/Area2D"]
+visible = false
+position = Vector2( 0, -322.687 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail95" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail119" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -170.001 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1642.86, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail119" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail119/Area2D"]
+visible = false
+position = Vector2( 0, -322.687 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail119" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail96" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -7269.99 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.6, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail96" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail96/Area2D"]
+visible = false
+position = Vector2( 0, -363.025 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail96" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail97" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -7670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail97" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail97/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail97" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail98" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -7870 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail98" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail98/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail98" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail99" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -8895 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.713, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail99" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail99/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail99" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail100" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -9045 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.713, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail100" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail100/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail100" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail101" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -9195 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail101" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail101/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail101" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail102" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -10120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( -0.00012207, -214.283, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail102" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail102/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail102" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail103" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -9320 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.715, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail103" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail103/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail103" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail104" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -9495 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -142.857, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail104" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail104/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail104" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail105" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -6270 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail105" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail105/Area2D"]
+visible = false
+position = Vector2( 0, -251.257 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail105" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail106" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -6470 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.572, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail106" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail106/Area2D"]
+visible = false
+position = Vector2( 0, -251.257 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail106" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail107" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -6670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.145, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail107" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail107/Area2D"]
+visible = false
+position = Vector2( 0, -251.257 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail107" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail108" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -4870 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.429, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail108" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail108/Area2D"]
+visible = false
+position = Vector2( 0, -377.384 )
+z_index = 1
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail108" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail109" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -5270.01 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -500, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail109" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail109/Area2D"]
+visible = false
+position = Vector2( 0, -382.444 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail109" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail110" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -8120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1071.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail110" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail110/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail110" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail111" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -9695 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1000, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail111" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail111/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail111" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail112" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -8570 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail112" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail112/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail112" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Note260" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -25020 )
+
+[node name="Note261" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -26770 )
+
+[node name="Note262" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -26870 )
+
+[node name="Note263" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -26970 )
+
+[node name="Note264" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -27070 )
+
+[node name="Note265" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -27420 )
+
+[node name="Note266" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -27320 )
+
+[node name="Note267" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, -27870 )
+
+[node name="Note268" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -28570 )
+
+[node name="Note269" parent="." instance=ExtResource( 2 )]
+position = Vector2( 563, -28670 )
+
+[node name="Note270" parent="." instance=ExtResource( 2 )]
+position = Vector2( 683, -29520 )
+
+[node name="Trail137" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -23920 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.141, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail137" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail137/Area2D"]
+visible = false
+position = Vector2( 0, -214.285 )
+shape = SubResource( 3 )
+
+[node name="Note" parent="Trail137" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail138" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -24120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.141, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail138" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail138/Area2D"]
+visible = false
+position = Vector2( 0, -215.404 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail138" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail139" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -24320 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.141, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail139" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail139/Area2D"]
+visible = false
+position = Vector2( 0, -215.404 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail139" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail140" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -24520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.578, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail140" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail140/Area2D"]
+visible = false
+position = Vector2( 0, -215.404 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail140" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail141" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -25320 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -285.714, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail141" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail141/Area2D"]
+visible = false
+position = Vector2( 0, -143.976 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail141" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail142" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -25520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail142" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail142/Area2D"]
+visible = false
+position = Vector2( 0, -322.687 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail142" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail143" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -25820 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail143" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail143/Area2D"]
+visible = false
+position = Vector2( 0, -322.687 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail143" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail144" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -27170 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.289, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail144" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail144/Area2D"]
+visible = false
+position = Vector2( 0, -363.025 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail144" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail145" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -27520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.289, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail145" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail145/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail145" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail146" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -27670 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.143, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail146" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail146/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail146" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail147" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -28820 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.289, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail147" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail147/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail147" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail148" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -28970 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.289, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail148" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail148/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail148" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail149" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -29120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.289, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail149" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail149/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail149" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail150" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -30020 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -857.148, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail150" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail150/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail150" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail151" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -29220 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.281, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail151" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail151/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail151" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail152" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -29420 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -142.857, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail152" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail152/Area2D"]
+visible = false
+position = Vector2( 0, -179.83 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail152" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail153" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -26120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -428.572, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail153" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail153/Area2D"]
+visible = false
+position = Vector2( 0, -251.257 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail153" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail154" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -26320 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -357.141, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail154" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail154/Area2D"]
+visible = false
+position = Vector2( 0, -251.257 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail154" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail155" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -26520 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0.000244141, -499.994, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail155" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail155/Area2D"]
+visible = false
+position = Vector2( 0, -251.257 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail155" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail156" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 563, -24720 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -571.429, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail156" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail156/Area2D"]
+visible = false
+position = Vector2( 0, -377.384 )
+z_index = 1
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail156" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail157" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -25120 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -500, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail157" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail157/Area2D"]
+visible = false
+position = Vector2( 0, -382.444 )
+shape = SubResource( 4 )
+
+[node name="Note" parent="Trail157" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail158" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 683, -27970 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -1071.43, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail158" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail158/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail158" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail159" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -29620 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -928.57, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail159" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail159/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail159" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10
+
+[node name="Trail160" type="Line2D" parent="."]
+show_behind_parent = true
+light_mask = 2048
+position = Vector2( 803, -28470 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 10
+z_as_relative = false
+points = PoolVector2Array( 0, -214.285, 0, 0 )
+width = 170.0
+width_curve = SubResource( 1 )
+default_color = Color( 0.419608, 1, 0.4, 1 )
+joint_mode = 1
+begin_cap_mode = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Trail160" groups=[
+"trail",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trail160/Area2D"]
+visible = false
+position = Vector2( 0, -571.429 )
+shape = SubResource( 2 )
+
+[node name="Note" parent="Trail160" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
+z_index = 10

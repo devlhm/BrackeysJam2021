@@ -17,7 +17,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 45, 30 )
 
 [node name="Note" type="Area2D" groups=[
@@ -44,7 +44,7 @@ scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.001
 one_shot = true
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -68,8 +68,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="Particles2D" parent="." instance=ExtResource( 4 )]
-visible = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

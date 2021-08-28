@@ -4,10 +4,11 @@
 [ext_resource path="res://Sprites/Menu/OptionsMenu/Slider.tres" type="StyleBox" id=2]
 [ext_resource path="res://Sprites/Menu/OptionsMenu/Grabber.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Menu/OptionsMenu/Area.tres" type="StyleBox" id=4]
-[ext_resource path="res://Sounds/Sounds_song.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/Songs/Sounds_song.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Scripts/OptionsMenu.gd" type="Script" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Menu/OptionsMenu/SfxOn.png" type="Texture" id=8]
+
 
 [node name="OptionsMenu" type="Control"]
 anchor_right = 1.0

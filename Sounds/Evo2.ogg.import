@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Evo2.ogg-f3f6dfc33b676d6784de5cc8288844a5.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Evo2.ogg"
+dest_files=[ "res://.import/Evo2.ogg-f3f6dfc33b676d6784de5cc8288844a5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

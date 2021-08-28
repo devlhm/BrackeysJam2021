@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Song.gd" type="Script" id=1]
+
+[node name="Song" type="Node2D"]
+script = ExtResource( 1 )
+bpm = 100
+measures = 100
+song_start = 100
+song_end = 100
+neighbor_start = 100
+neighbor_end = 100
+climax = 100

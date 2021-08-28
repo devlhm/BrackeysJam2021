@@ -1,9 +1,9 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Scenes/Rhythm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Camera.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Song Objects/FirstSong.gd" type="Script" id=3]
 [ext_resource path="res://Textures/cenario.png" type="Texture" id=4]
+[ext_resource path="res://Textures/purple_lightbulb.png" type="Texture" id=5]
 [ext_resource path="res://Textures/tv/tile000.png" type="Texture" id=6]
 [ext_resource path="res://Textures/tv/tile005.png" type="Texture" id=7]
 [ext_resource path="res://Textures/tv/tile006.png" type="Texture" id=8]
@@ -54,8 +54,12 @@
 [ext_resource path="res://Textures/tv/skull/tile034.png" type="Texture" id=53]
 [ext_resource path="res://Textures/tv/skull/tile029.png" type="Texture" id=54]
 [ext_resource path="res://Textures/tv/skull/tile025.png" type="Texture" id=55]
-[ext_resource path="res://Textures/player_placeholder.png" type="Texture" id=56]
+[ext_resource path="res://SpriteFrames/player1.tres" type="SpriteFrames" id=56]
 [ext_resource path="res://Textures/lampada.png" type="Texture" id=57]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=58]
+[ext_resource path="res://SpriteFrames/player2.tres" type="SpriteFrames" id=59]
+[ext_resource path="res://Textures/CircleMask.png" type="Texture" id=71]
+[ext_resource path="res://Textures/char_silhouette.png" type="Texture" id=72]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -65,6 +69,14 @@ glow_blend_mode = 0
 glow_hdr_threshold = 1.5
 
 [sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 57 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 12 ) ],
 "loop": true,
@@ -77,8 +89,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[sub_resource type="Animation" id=3]
-resource_name = "eyes_moving"
+[sub_resource type="Animation" id=4]
 length = 33.0
 loop = true
 tracks/0/type = "value"
@@ -94,7 +105,140 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 10, 3 ), Vector2( 10, 3 ), Vector2( -10, 3 ), Vector2( -10, 3 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Animation" id=5]
+length = 5.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Rhythm")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 3.2, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 4 ],
+"method": "add_button"
+}, {
+"args": [  ],
+"method": "start_song"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharMaskLight:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8, 1.5, 1.9, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 356.196, 522.358 ), Vector2( 356.196, 1000 ), Vector2( 356.196, 1000 ), Vector2( 356.196, 522.358 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlayerLight:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.9, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player/AnimatedSprite:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Player/AnimatedSprite:frames")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 56 ), ExtResource( 59 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Rhythm/SFXPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_evolution_1"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "transit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "transition", "guitar" ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "transit_back"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "transition_back", "idle" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AnimatedSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "transit"
+length = 0.5
+
+[sub_resource type="Animation" id=9]
+resource_name = "transit_back"
+length = 0.5
+
+[sub_resource type="Shader" id=10]
 code = "shader_type canvas_item;
 uniform vec2 player_position;
 uniform vec4 color : hint_color = vec4(0.305, 0.298, 0.341,1);
@@ -110,34 +254,16 @@ void fragment(){
 	COLOR = vec4(color.rgb , vignette );
 }"
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
 shader_param/player_position = Vector2( 0.5, 0.57 )
 shader_param/color = Color( 0, 0, 0, 1 )
 shader_param/MULTIPLIER = 0.791
 shader_param/SCALE = 0.66
 shader_param/SOFTNESS = 1.0
 
-[sub_resource type="Animation" id=6]
-resource_name = "to_song_2"
-length = 3.0
-tracks/0/type = "method"
-tracks/0/path = NodePath("Rhythm")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 1, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ 4 ],
-"method": "add_button"
-}, {
-"args": [ 8 ],
-"method": "start_song"
-} ]
-}
+[sub_resource type="ViewportTexture" id=12]
+viewport_path = NodePath("Viewport2")
 
 [node name="MainScene" type="Node2D"]
 
@@ -146,17 +272,20 @@ environment = SubResource( 1 )
 
 [node name="Lightbulb" type="Light2D" parent="."]
 light_mask = 0
-position = Vector2( 689.014, 151.318 )
+position = Vector2( 689.014, 148.842 )
 texture = ExtResource( 18 )
 texture_scale = 0.9
 color = Color( 0.556863, 0.803922, 1, 1 )
 energy = 1.3
 range_item_cull_mask = 2
+shadow_color = Color( 0.203922, 0.0117647, 0.384314, 0.0784314 )
 shadow_item_cull_mask = 0
 
-[node name="LightbulbSprite" type="Sprite" parent="Lightbulb"]
-position = Vector2( 1.1, -27.141 )
-texture = ExtResource( 57 )
+[node name="LightbulbSprite" type="AnimatedSprite" parent="Lightbulb"]
+position = Vector2( 1.1, -27 )
+scale = Vector2( 1.1, 1.1 )
+z_index = 1
+frames = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="Lightbulb"]
 
@@ -183,7 +312,7 @@ light_mask = 2
 position = Vector2( 868.335, 567 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -1
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 frame = 2
 playing = true
 
@@ -207,11 +336,10 @@ texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Eyeballs"]
 autoplay = "eyes_moving"
-anims/eyes_moving = SubResource( 3 )
+anims/eyes_moving = SubResource( 4 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 682, 384 )
-offset = Vector2( 0.002, 0.002 )
 anchor_mode = 1
 rotating = true
 
@@ -223,13 +351,51 @@ color = Color( 0.560784, 1, 0.556863, 1 )
 energy = 1.2
 range_item_cull_mask = 2
 
-[node name="player_placeholder" type="Sprite" parent="."]
-position = Vector2( 346.89, 514.409 )
-scale = Vector2( 0.3, 0.28 )
-texture = ExtResource( 56 )
+[node name="Rhythm" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1.25995, 1.25995 )
+play_from = 210
+lightbulb_purple = Color( 0.545098, 0.2, 1, 1 )
+tv_screen_path = NodePath("../Background/TVScreen")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/to_song_2 = SubResource( 5 )
+
+[node name="Player" type="Node2D" parent="." groups=[
+"player",
+]]
+light_mask = 2
+position = Vector2( 366.497, 538.054 )
+script = ExtResource( 58 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+frames = ExtResource( 56 )
+animation = "idle"
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/transit = SubResource( 6 )
+anims/transit_back = SubResource( 7 )
+
+[node name="PlayerLight" type="Node2D" parent="." groups=[
+"player",
+]]
+visible = false
+light_mask = 1024
+position = Vector2( 366.497, 539.836 )
+script = ExtResource( 58 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerLight"]
+anims/transit = SubResource( 8 )
+anims/transit_back = SubResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="PlayerLight"]
+modulate = Color( 2, 2, 2, 1 )
+light_mask = 1026
+texture = ExtResource( 72 )
 
 [node name="Vignette" type="ColorRect" parent="."]
-material = SubResource( 5 )
+light_mask = 0
+material = SubResource( 11 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1366.0
@@ -239,12 +405,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Rhythm" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1.25995, 1.25995 )
-song = ExtResource( 3 )
-tv_screen_path = NodePath("../Background/TVScreen")
-
 [node name="ColorOverlay" type="ColorRect" parent="."]
+light_mask = 0
 margin_right = 1366.0
 margin_bottom = 768.0
 rect_min_size = Vector2( 1366, 768 )
@@ -253,5 +415,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/to_song_2 = SubResource( 6 )
+[node name="CharMaskLight" type="Light2D" parent="."]
+position = Vector2( 356.196, 522.358 )
+texture = SubResource( 12 )
+mode = 3
+range_item_cull_mask = 1024
+
+[node name="TrailMask" type="Light2D" parent="."]
+position = Vector2( 685.077, 928.72 )
+scale = Vector2( 2.20103, 1 )
+texture = SubResource( 12 )
+mode = 3
+range_item_cull_mask = 2048
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 200, 500 )
+own_world = true
+transparent_bg = true
+
+[node name="CircleMask" type="Sprite" parent="Viewport"]
+position = Vector2( 460.311, 272.804 )
+texture = ExtResource( 71 )
+
+[node name="Viewport2" type="Viewport" parent="."]
+size = Vector2( 200, 500 )
+own_world = true
+transparent_bg = true
+
+[node name="CircleMask" type="Sprite" parent="Viewport2"]
+position = Vector2( 460.311, 272.804 )
+texture = ExtResource( 71 )
