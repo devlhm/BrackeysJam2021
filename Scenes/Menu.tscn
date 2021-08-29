@@ -27,6 +27,29 @@ length = 3.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Center/Buttons/Start:modulate")
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Sprites/Menu/Logo.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Menu/Buttons/Quit/frame0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Menu/Buttons/Start/frame0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Menu/Buttons/Options/frame0.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Menu/Buttons/Credits/frame0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Menu/Buttons/Start/frame1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Menu/Buttons/Start/frame2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Menu/Buttons/Quit/frame1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Menu/Buttons/Options/frame1.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Menu/Buttons/Credits/frame1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Menu/Buttons/Credits/frame2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Menu/Buttons/Quit/frame2.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Menu/Buttons/Options/frame2.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=14]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ButtonsAnimation"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Margin/VBox/ButtonsContainer/Start:texture_normal")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
