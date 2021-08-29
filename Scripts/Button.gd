@@ -10,7 +10,7 @@ var trail = false
 var particles
 
 onready var default_scale = scale
-export (float, 1) var scale_factor = 1.1
+var scale_factor = 1.15
 
 export var input = ""
 
@@ -68,7 +68,7 @@ func _unhandled_input(event):
 func _on_PerfectArea_area_entered(area):
 	if area.is_in_group("note"):
 		perfect = true
-		area.destroy(0)
+#		area.destroy(0)
 
 
 func _on_PerfectArea_area_exited(area):

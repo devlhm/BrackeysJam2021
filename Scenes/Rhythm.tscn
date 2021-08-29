@@ -202,6 +202,7 @@ tracks/0/keys = {
 [node name="Rythm" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 2 )
+play_from = 100
 supress_threshold = 3
 miss_damage = 3.0
 
@@ -222,6 +223,7 @@ __meta__ = {
 }
 
 [node name="Buttons" type="Node2D" parent="."]
+position = Vector2( -60, 0 )
 
 [node name="Button" parent="Buttons" groups=[
 "button",
@@ -251,9 +253,11 @@ gray = Color( 0.254902, 0.254902, 0.254902, 1 )
 anims/add_lane_4 = SubResource( 1 )
 anims/add_lane_5 = SubResource( 2 )
 
-[node name="Button4" parent="." instance=ExtResource( 3 )]
+[node name="Button4" parent="." groups=[
+"button",
+] instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( 863, 860 )
+position = Vector2( 863, 680 )
 input = "button4"
 gray = Color( 0.254902, 0.254902, 0.254902, 1 )
 

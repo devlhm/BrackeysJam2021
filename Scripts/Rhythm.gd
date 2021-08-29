@@ -65,6 +65,7 @@ var lightbulb_tween
 var lightbulb_sprite
 
 export (Color, RGB) var lightbulb_purple
+export (Color, RGB) var lightbulb_blue
 
 export (NodePath) var tv_screen_path
 var tv_screen
@@ -83,7 +84,7 @@ func _ready():
 	default_alpha = modulate.a
 	default_overlay_alpha = overlay.modulate.a
 
-	start_song(4)
+	start_song(3)
 
 func _process(delta):
 	if $Neighbor.visiting && tv_screen.animation != "skull":
@@ -95,12 +96,13 @@ func _process(delta):
 		$SFXPlayer.play_footsteps()
 
 func start_song(offset : int = 4):
+	song_index = Global.song_index
 	$Conductor.initialize(Global.songs[song_index])
 	initialize()
-	# if song_index == 0:
+#	if song_index != 0:
+#		play_from = 0
+
 	$Conductor.play_from_beat(play_from, offset)
-	# else:
-#	$Conductor.play_with_beat_offset(offset)
 
 func _input(event):
 	if event.is_action("escape"):
@@ -177,10 +179,12 @@ func _on_Conductor_beat(position_beats, position_measure):
 
 	if position_beats == Global.songs[song_index].climax:
 		enter_climax()
-		
+
 	if position_beats >= Global.songs[song_index].song_end:
 		$Conductor.stop_song()
 		get_tree().call_group("player", "transit_back")
+		exit_climax()
+#		Global.song_index += 1
 		results()
 
 func increment_score(by):
@@ -277,6 +281,24 @@ func enter_climax():
 	
 	lightbulb.get_node("LightbulbSprite").frame = 1
 	lightbulb.color = lightbulb_purple
+	
+func exit_climax():
+	$NoteScroller.climax = false
+	climax = false
+
+	for button in get_tree().get_nodes_in_group("button"):
+		button.frame = 0
+		button.modulate = Color(1.5, 1.5, 1.5)
+		button.get_node("ShineParticles").emitting = false
+
+	for note in get_tree().get_nodes_in_group("visible"):
+		note.get_node("AnimatedSprite").frame = 0
+		Global.camera.shake(200, .5, 200)
+		note.get_node("AnimatedSprite").modulate = Color(1, 1, 1)
+
+	
+	lightbulb.get_node("LightbulbSprite").frame = 0
+	lightbulb.color = lightbulb_blue
 
 func add_button(btn_index : int):
 	$Buttons/AnimationPlayer.play("add_lane_" + str(btn_index))

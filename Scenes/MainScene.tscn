@@ -313,7 +313,7 @@ position = Vector2( 868.335, 567 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -1
 frames = SubResource( 3 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Eyeballs" type="Node2D" parent="Background"]
@@ -352,9 +352,10 @@ energy = 1.2
 range_item_cull_mask = 2
 
 [node name="Rhythm" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1.25995, 1.25995 )
-play_from = 210
+position = Vector2( 1.25995, 2.44916 )
+play_from = 140
 lightbulb_purple = Color( 0.545098, 0.2, 1, 1 )
+lightbulb_blue = Color( 0.556863, 0.803922, 1, 1 )
 tv_screen_path = NodePath("../Background/TVScreen")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -368,8 +369,9 @@ position = Vector2( 366.497, 538.054 )
 script = ExtResource( 58 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-frames = ExtResource( 56 )
+frames = ExtResource( 59 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
@@ -422,8 +424,8 @@ mode = 3
 range_item_cull_mask = 1024
 
 [node name="TrailMask" type="Light2D" parent="."]
-position = Vector2( 685.077, 928.72 )
-scale = Vector2( 2.20103, 1 )
+position = Vector2( 690.027, 928.72 )
+scale = Vector2( 2.25053, 1 )
 texture = SubResource( 12 )
 mode = 3
 range_item_cull_mask = 2048

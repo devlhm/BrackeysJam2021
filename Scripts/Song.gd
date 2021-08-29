@@ -12,3 +12,5 @@ export (int) var neighbor_end
 export (int) var climax
 
 export (String) var stream_path
+
+export (float) var note_distancing = 200

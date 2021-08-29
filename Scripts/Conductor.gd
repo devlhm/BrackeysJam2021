@@ -32,6 +32,7 @@ func initialize(song):
 	measure = 1
 
 	closest = 0
+	initial_beat = 0
 	time_off_beat = 0.0
 
 func _physics_process(_delta):
@@ -62,7 +63,7 @@ func closest_beat(nth):
 func play_from_beat(beat, offset):
 	var start_timer = $StartTimer
 	
-	measure = beat % measures	
+	measure = beat % measures
 		
 	get_parent().get_node("NoteScroller").set_offset(beat)
 	

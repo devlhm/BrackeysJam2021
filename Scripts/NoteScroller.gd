@@ -16,15 +16,12 @@ export (Color, RGB) var yellow
 export (Color, RGB) var pink
 
 onready var colors = [green, blue, red, yellow, pink]
-
-func _ready():
-	pass
 	
 func initialize():
 	songs = [load("res://Song Objects/FirstSong.tscn").instance(), load("res://Song Objects/SecondSong.tscn").instance(), load("res://Song Objects/ThirdSong.tscn").instance()]
 	var bpm = songs[Global.song_index].bpm
 	var sec_per_beat : float = 60.0/bpm
-	speed = 800/(sec_per_beat*4)
+	speed = songs[Global.song_index].note_distancing/sec_per_beat
 	get_lanes()
 	
 	if(has_node("Song")):
@@ -33,11 +30,10 @@ func initialize():
 		song.queue_free()
 		
 	add_child(songs[Global.song_index])
-	print(get_node("Song"))
 	$Song.position = Vector2.ZERO
 	
 func set_offset(song_offset : int):
-	$Song.position.y += song_offset * 200
+	$Song.position.y += song_offset * songs[Global.song_index].note_distancing
 
 func _physics_process(delta):
 	if has_node("Song"):

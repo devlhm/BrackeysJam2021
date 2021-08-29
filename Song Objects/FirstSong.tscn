@@ -3153,11 +3153,11 @@ z_index = 10
 [node name="Trail119" type="Line2D" parent="."]
 show_behind_parent = true
 light_mask = 2048
-position = Vector2( 563, -170.001 )
+position = Vector2( 563, -170 )
 scale = Vector2( 0.35, 0.35 )
 z_index = 10
 z_as_relative = false
-points = PoolVector2Array( 0, -1642.86, 0, 0 )
+points = PoolVector2Array( -0.000244141, -1714.29, 0, 0 )
 width = 170.0
 width_curve = SubResource( 1 )
 default_color = Color( 0.419608, 1, 0.4, 1 )

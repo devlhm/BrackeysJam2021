@@ -9,7 +9,7 @@ var missed = 0
 var grade = "NA"
 
 var camera = null
-var song_index = 0
+var song_index = 1
 
 var songs = [load("res://Song Objects/FirstSong.tscn").instance(), load("res://Song Objects/SecondSong.tscn").instance(), load("res://Song Objects/ThirdSong.tscn").instance()]
 

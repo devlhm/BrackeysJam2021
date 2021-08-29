@@ -22,7 +22,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 45, 4.70239 )
+extents = Vector2( 45, 24.024 )
 
 [node name="Note" type="Area2D" groups=[
 "note",
@@ -33,7 +33,7 @@ z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 2.25, 2.25 )
 frames = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
