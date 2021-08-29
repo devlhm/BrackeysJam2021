@@ -5,22 +5,22 @@ onready var letterTimer: Timer = $LetterTimer
 onready var image: TextureRect = $Margin/VBox/ImageContainer/Image
 onready var pageTimer: Timer = $PageTimer
 
-const datas = [
-	{"sprite": "res://icon.png", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam non eros eu bibendum. Nunc id condimentum nulla. Curabitur eu neque eget elit rutrum tempus."},
-	{"sprite": "res://icon2.png", "text": "Aenean non ipsum et justo pulvinar blandit. Fusce aliquet velit ut semper luctus. Etiam libero nibh, consequat a ultrices et, bibendum in tortor."}	
-]
+onready var datas: Array
 
-var page = 0
+var page: int = 0
+var sceneOnFinish: String = "res://Scenes/Menu.tscn"
 
 func _ready():
-	changePage(datas[page])
 	pass
+	
+func start(pg):
+	changePage(datas[pg])
 
 func _on_LetterTimer_timeout():
+	label.visible_characters += 1
 	if label.visible_characters <= len(label.text) - 1:
-		label.visible_characters += 1
-		if label.text[label.visible_characters - 1] in ".,":
-			letterTimer.wait_time = 1
+		if label.text[label.visible_characters] == " ":
+			letterTimer.wait_time = 0.5
 		else:
 			letterTimer.wait_time = 0.07
 		$KeyboardSound.play(0)
@@ -35,7 +35,7 @@ func _on_PageTimer_timeout():
 	if page <= len(datas) - 1:
 		changePage(datas[page])
 	else:
-		get_tree().change_scene("res://Scenes/Menu.tscn")
+		get_tree().change_scene(sceneOnFinish)
 	pass
 
 func changePage(data):

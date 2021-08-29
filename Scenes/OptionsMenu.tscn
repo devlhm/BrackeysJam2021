@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprites/Menu/OptionsMenu/MusicOn.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Menu/OptionsMenu/Slider.tres" type="StyleBox" id=2]
@@ -6,8 +6,26 @@
 [ext_resource path="res://Sprites/Menu/OptionsMenu/Area.tres" type="StyleBox" id=4]
 [ext_resource path="res://Sounds/Sounds_song.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Scripts/OptionsMenu.gd" type="Script" id=6]
-[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Menu/OptionsMenu/background1.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Menu/OptionsMenu/SfxOn.png" type="Texture" id=8]
+[ext_resource path="res://Fonts/mangat.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Sprites/Menu/OptionsMenu/background2.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 96
+outline_size = 16
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 11 )
 
 [node name="OptionsMenu" type="Control"]
 anchor_right = 1.0
@@ -17,33 +35,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background1" type="TextureRect" parent="."]
+modulate = Color( 0.533333, 0.254902, 0.607843, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background2" type="TextureRect" parent="Background1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Margin" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 70.0
-margin_top = 50.0
+margin_top = 70.0
 margin_right = -70.0
-margin_bottom = -50.0
+margin_bottom = -70.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBox" type="VBoxContainer" parent="Margin"]
 margin_right = 1226.0
-margin_bottom = 668.0
+margin_bottom = 628.0
+custom_constants/separation = 20
 
-[node name="ImageContainer" type="CenterContainer" parent="Margin/VBox"]
+[node name="Title" type="Label" parent="Margin/VBox"]
 margin_right = 1226.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 1 )
+text = "OPTIONS"
+align = 1
+valign = 1
 
 [node name="Sliders" type="VBoxContainer" parent="Margin/VBox"]
-margin_top = 4.0
+margin_top = 131.0
 margin_right = 1226.0
-margin_bottom = 227.0
+margin_bottom = 408.0
+size_flags_vertical = 3
 custom_constants/separation = 25
+alignment = 1
 
 [node name="MusicContainer" type="HBoxContainer" parent="Margin/VBox/Sliders"]
+margin_top = 27.0
 margin_right = 1226.0
-margin_bottom = 99.0
+margin_bottom = 126.0
 custom_constants/separation = 30
 
 [node name="MusicButton" type="TextureButton" parent="Margin/VBox/Sliders/MusicContainer"]
@@ -71,9 +119,9 @@ max_value = 0.0
 value = -15.0
 
 [node name="SFXContainer" type="HBoxContainer" parent="Margin/VBox/Sliders"]
-margin_top = 124.0
+margin_top = 151.0
 margin_right = 1226.0
-margin_bottom = 223.0
+margin_bottom = 250.0
 custom_constants/separation = 30
 
 [node name="SFXButton" type="TextureButton" parent="Margin/VBox/Sliders/SFXContainer"]
@@ -100,21 +148,61 @@ min_value = -30.0
 max_value = 0.0
 value = -15.0
 
-[node name="BackButton" type="TextureButton" parent="Margin/VBox"]
-margin_top = 231.0
-margin_right = 64.0
-margin_bottom = 295.0
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox"]
+margin_top = 428.0
+margin_right = 1226.0
+margin_bottom = 508.0
+rect_min_size = Vector2( 1226, 80 )
+
+[node name="ChangeControlsButton" type="Button" parent="Margin/VBox/HBox"]
+margin_right = 494.0
+margin_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
-texture_normal = ExtResource( 7 )
-stretch_mode = 5
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Change Controls"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="CenterContainer" parent="Margin/VBox"]
+margin_top = 528.0
+margin_right = 1226.0
+margin_bottom = 628.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 1226, 100 )
+
+[node name="BackButton" type="Button" parent="Margin/VBox/Center"]
+margin_left = 525.0
+margin_top = 10.0
+margin_right = 700.0
+margin_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
+text = "Back"
+flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
 bus = "Music"
 
-[connection signal="pressed" from="Margin/VBox/Sliders/MusicContainer/MusicButton" to="." method="_on_Button_pressed" binds= [ "Music" ]]
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[connection signal="pressed" from="Margin/VBox/Sliders/MusicContainer/MusicButton" to="." method="_on_OptionsButton_pressed" binds= [ "Music" ]]
 [connection signal="value_changed" from="Margin/VBox/Sliders/MusicContainer/MusicSlider" to="." method="_on_Slider_value_changed" binds= [ "Music" ]]
-[connection signal="pressed" from="Margin/VBox/Sliders/SFXContainer/SFXButton" to="." method="_on_Button_pressed" binds= [ "SFX" ]]
+[connection signal="pressed" from="Margin/VBox/Sliders/SFXContainer/SFXButton" to="." method="_on_OptionsButton_pressed" binds= [ "SFX" ]]
 [connection signal="value_changed" from="Margin/VBox/Sliders/SFXContainer/SFXSlider" to="." method="_on_Slider_value_changed" binds= [ "SFX" ]]
-[connection signal="pressed" from="Margin/VBox/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="mouse_entered" from="Margin/VBox/HBox/ChangeControlsButton" to="." method="_on_Button_mouse_entered" binds= [ "ChangeControls" ]]
+[connection signal="mouse_exited" from="Margin/VBox/HBox/ChangeControlsButton" to="." method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Margin/VBox/HBox/ChangeControlsButton" to="." method="_on_Button_pressed" binds= [ "ChangeControls" ]]
+[connection signal="mouse_entered" from="Margin/VBox/Center/BackButton" to="." method="_on_Button_mouse_entered" binds= [ "Back" ]]
+[connection signal="mouse_exited" from="Margin/VBox/Center/BackButton" to="." method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Margin/VBox/Center/BackButton" to="." method="_on_Button_pressed" binds= [ "Back" ]]

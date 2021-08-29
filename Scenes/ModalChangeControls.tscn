@@ -1,0 +1,223 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/ModalChangeControls.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/GROBOLD.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Resources/optionsButtonGroup.tres" type="ButtonGroup" id=3]
+[ext_resource path="res://Fonts/mangat.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/background1.png-2cf9981adfeb43a503443eee68fa5265.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/background2.png-4e36641397640ef1b56ae614f15787a5.stex"
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 4 )
+
+[node name="ModalChangeControls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background1" type="TextureRect" parent="."]
+modulate = Color( 0.533333, 0.254902, 0.607843, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background2" type="TextureRect" parent="Background1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+margin_left = 70.0
+margin_top = 100.0
+margin_right = 1296.0
+margin_bottom = 668.0
+size_flags_horizontal = 0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="CenterControls" type="CenterContainer" parent="VBox"]
+margin_right = 1226.0
+margin_bottom = 448.0
+
+[node name="ColorRect" type="ColorRect" parent="VBox/CenterControls"]
+margin_left = 271.0
+margin_right = 954.0
+margin_bottom = 448.0
+rect_min_size = Vector2( 683, 448 )
+color = Color( 0.0352941, 0, 0.054902, 0.784314 )
+
+[node name="CenterContainer" type="CenterContainer" parent="VBox/CenterControls/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeKeyContainer" type="GridContainer" parent="VBox/CenterControls/ColorRect/CenterContainer"]
+margin_left = 268.0
+margin_top = 82.0
+margin_right = 415.0
+margin_bottom = 366.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 30
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_top = 7.0
+margin_right = 105.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
+text = "Button 1:"
+
+[node name="button1" type="Button" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_left = 135.0
+margin_right = 147.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 4 )
+toggle_mode = true
+group = ExtResource( 3 )
+
+[node name="Label2" type="Label" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_top = 56.0
+margin_right = 105.0
+margin_bottom = 81.0
+custom_fonts/font = SubResource( 3 )
+text = "Button 2:"
+
+[node name="button2" type="Button" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_left = 135.0
+margin_top = 49.0
+margin_right = 147.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 4 )
+toggle_mode = true
+group = ExtResource( 3 )
+
+[node name="Label3" type="Label" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_top = 105.0
+margin_right = 105.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 3 )
+text = "Button 3:"
+
+[node name="button3" type="Button" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_left = 135.0
+margin_top = 98.0
+margin_right = 147.0
+margin_bottom = 137.0
+custom_fonts/font = SubResource( 4 )
+toggle_mode = true
+group = ExtResource( 3 )
+
+[node name="Label4" type="Label" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_top = 154.0
+margin_right = 105.0
+margin_bottom = 179.0
+custom_fonts/font = SubResource( 3 )
+text = "Button 4:"
+
+[node name="button4" type="Button" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_left = 135.0
+margin_top = 147.0
+margin_right = 147.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 4 )
+toggle_mode = true
+group = ExtResource( 3 )
+
+[node name="Label5" type="Label" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_top = 203.0
+margin_right = 105.0
+margin_bottom = 228.0
+custom_fonts/font = SubResource( 3 )
+text = "Button 5:"
+
+[node name="button5" type="Button" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_left = 135.0
+margin_top = 196.0
+margin_right = 147.0
+margin_bottom = 235.0
+custom_fonts/font = SubResource( 4 )
+toggle_mode = true
+group = ExtResource( 3 )
+
+[node name="Label6" type="Label" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_top = 252.0
+margin_right = 105.0
+margin_bottom = 277.0
+custom_fonts/font = SubResource( 3 )
+text = "Supress:"
+
+[node name="supress" type="Button" parent="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer"]
+margin_left = 135.0
+margin_top = 245.0
+margin_right = 147.0
+margin_bottom = 284.0
+custom_fonts/font = SubResource( 4 )
+toggle_mode = true
+group = ExtResource( 3 )
+
+[node name="Center" type="CenterContainer" parent="VBox"]
+margin_top = 468.0
+margin_right = 1226.0
+margin_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 1226, 100 )
+
+[node name="BackButton" type="Button" parent="VBox/Center"]
+margin_left = 525.0
+margin_top = 10.0
+margin_right = 700.0
+margin_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Back"
+flat = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer/button1" to="." method="_on_ChangeKeyButton_pressed" binds= [ "button1" ]]
+[connection signal="pressed" from="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer/button2" to="." method="_on_ChangeKeyButton_pressed" binds= [ "button2" ]]
+[connection signal="pressed" from="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer/button3" to="." method="_on_ChangeKeyButton_pressed" binds= [ "button3" ]]
+[connection signal="pressed" from="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer/button4" to="." method="_on_ChangeKeyButton_pressed" binds= [ "button4" ]]
+[connection signal="pressed" from="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer/button5" to="." method="_on_ChangeKeyButton_pressed" binds= [ "button5" ]]
+[connection signal="pressed" from="VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer/supress" to="." method="_on_ChangeKeyButton_pressed" binds= [ "supress" ]]
+[connection signal="mouse_entered" from="VBox/Center/BackButton" to="." method="_on_BackButton_mouse_entered"]
+[connection signal="mouse_exited" from="VBox/Center/BackButton" to="." method="_on_BackButton_mouse_exited"]
+[connection signal="pressed" from="VBox/Center/BackButton" to="." method="_on_BackButton_pressed"]

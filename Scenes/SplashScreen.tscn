@@ -19,4 +19,5 @@ autoplay = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="finished" from="SplashScreenPlayer" to="." method="_on_SplashScreenPlayer_finished"]

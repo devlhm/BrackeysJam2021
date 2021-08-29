@@ -177,15 +177,14 @@ outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 40
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 15 )
 
-[sub_resource type="Animation" id=8]
-resource_name = "move"
+[sub_resource type="Animation" id=9]
 length = 2.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:rect_position:y")
@@ -400,7 +399,7 @@ margin_left = -84.0
 margin_top = 44.3621
 margin_right = 84.0
 margin_bottom = 84.3621
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 text = "RESULTS"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -539,6 +538,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ResultsScreen"]
-anims/move = SubResource( 8 )
+anims/move = SubResource( 9 )
+
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

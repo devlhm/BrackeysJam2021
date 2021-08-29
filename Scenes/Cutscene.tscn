@@ -50,6 +50,7 @@ margin_right = 973.0
 margin_bottom = 360.0
 rect_min_size = Vector2( 720, 360 )
 expand = true
+stretch_mode = 6
 
 [node name="TextContainer" type="HBoxContainer" parent="Margin/VBox"]
 margin_top = 410.0
