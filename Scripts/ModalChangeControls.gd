@@ -16,7 +16,7 @@ onready var supress: Button = $VBox/CenterControls/ColorRect/CenterContainer/Cha
 onready var changeKeyContainer: GridContainer = $VBox/CenterControls/ColorRect/CenterContainer/ChangeKeyContainer
 
 func _ready():
-	$"/root/MusicPlayer".change_music("Stop", 0)
+	$"/root/MusicPlayer".change_music("res://Sounds/Menu.ogg", -1)
 	button1.text = OS.get_scancode_string(InputMap.get_action_list("button1")[0].get_scancode())
 	button2.text = OS.get_scancode_string(InputMap.get_action_list("button2")[0].get_scancode())
 	button3.text = OS.get_scancode_string(InputMap.get_action_list("button3")[0].get_scancode())
@@ -43,7 +43,10 @@ func changeButton(action, scancode):
 func _on_BackButton_pressed():
 	playSFX("selected")
 	OS.delay_msec(175)
-	get_tree().change_scene("res://Scenes/OptionsMenu.tscn")
+	if $"/root/MenuController".backTo == "Options":
+		get_tree().change_scene("res://Scenes/OptionsMenu.tscn")
+	elif $"/root/MenuController".backTo == "Pause":
+		get_tree().change_scene("res://Scenes/PausedMenu.tscn")
 	pass
 
 

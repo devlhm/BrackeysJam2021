@@ -4,7 +4,7 @@ onready var buttonsContainer: VBoxContainer = $Center/Buttons
 onready var SFXPlayer: AudioStreamPlayer = $SFXPlayer
 
 func _ready():
-	$"/root/MusicPlayer".change_music("Stop", 0)
+	$"/root/MusicPlayer".change_music("res://Sounds/Menu.ogg", -1)
 	pass
 
 func _on_Button_pressed(button):
@@ -17,6 +17,7 @@ func _on_Button_pressed(button):
 		get_tree().change_scene("res://Scenes/OptionsMenu.tscn")
 	elif button == "Credits":
 		$"/root/MusicPlayer".change_music("Stop", 0)
+		get_tree().change_scene("res://Scenes/CreditsScreen.tscn")
 		pass
 	elif button == "Quit":
 		$"/root/MusicPlayer".change_music("Stop", 0)

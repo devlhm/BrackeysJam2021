@@ -13,12 +13,14 @@ onready var backButton: Button = $Margin/VBox/Center/BackButton
 onready var changeControlsButton: Button = $Margin/VBox/HBox/ChangeControlsButton
 
 func _ready():
+	$"/root/MusicPlayer".change_music("res://Sounds/Menu.ogg", -1)
 	var isMusicMuted: bool = AudioServer.is_bus_mute(musicBus)
 	var isSFXMuted: bool = AudioServer.is_bus_mute(SFXBus)	
 	musicSlider.value = AudioServer.get_bus_volume_db(musicBus)
 	SFXSlider.value = AudioServer.get_bus_volume_db(SFXBus)
 	setMute(isMusicMuted, "Music")
 	setMute(isSFXMuted, "SFX")
+	
 
 func _on_Slider_value_changed(value: float, busName: String):
 	setVolume(value, busName)
@@ -55,6 +57,7 @@ func _on_Button_pressed(button: String):
 	if button == "Back":
 		get_tree().change_scene("res://Scenes/Menu.tscn")
 	elif button == "ChangeControls":
+		$"/root/MenuController".backTo = "Options"
 		get_tree().change_scene("res://Scenes/ModalChangeControls.tscn")
 
 func _on_Button_mouse_entered(button):
