@@ -1,10 +1,10 @@
 extends Node2D
 
 export var visit_interval : float = 12
-export (int, 0, 30) var visit_chance = 30
+export (int, 0, 100) var visit_chance = 30
 export var visit_duration : float = 5
-export (float, 0) var stop_threshold = 1
-export (float, 0) var resume_threshold = .8
+export (float, 0, 5) var stop_threshold = 1
+export (float, 0, 5) var resume_threshold = .8
 
 var time_since_check : float = 0
 var time_since_visit : float = 0
@@ -33,7 +33,8 @@ func _process(delta):
 				toggle_visit()
 		else:
 			if(get_parent().supressing && time_since_visit > resume_threshold):
-				get_parent().miss(.2)
+				pass
+#				get_parent().miss(.2)
 				
 	else:
 		time_visiting += delta

@@ -14,6 +14,7 @@ var measure = 1
 # Determining how close to the beat an event is
 var closest = 0
 var time_off_beat = 0.0
+var initial_beat
 
 signal beat(position_beats, position_measure)
 
@@ -26,12 +27,12 @@ func initialize(song):
 	
 	song_position = 0.0
 	song_position_in_beats = 0
-	sec_per_beat
 	last_reported_beat = 0
 	beats_before_start = 0
 	measure = 1
 
 	closest = 0
+	initial_beat = 0
 	time_off_beat = 0.0
 
 func _physics_process(_delta):
@@ -60,23 +61,45 @@ func closest_beat(nth):
 	return Vector2(closest, time_off_beat)
 
 func play_from_beat(beat, offset):
-	play()
-	seek(beat * sec_per_beat)
-	beats_before_start = offset
+	var start_timer = $StartTimer
+	
 	measure = beat % measures
+		
+	get_parent().get_node("NoteScroller").set_offset(beat)
+	
+	if beat > 0:
+		initial_beat = beat
+		
+	beats_before_start = offset
+	
+	if offset > 0 && beat == 0:
+		start_timer.wait_time = sec_per_beat * offset
+		start_timer.start()
+	else:
+		start()
+
+func start():
+	play()
+	
+	if initial_beat:
+		seek((initial_beat - beats_before_start) * sec_per_beat)
+
+	_report_beat()
 
 func stop_song():
 	stop()
 
 func _on_StartTimer_timeout():
-	song_position_in_beats += 1
-	if song_position_in_beats < beats_before_start - 1:
-		$StartTimer.start()
-	elif song_position_in_beats == beats_before_start - 1:
-		$StartTimer.wait_time = $StartTimer.wait_time - (AudioServer.get_time_to_next_mix() +
-														AudioServer.get_output_latency())
-		$StartTimer.start()
-	else:
-		play()
-		$StartTimer.stop()
-	_report_beat()
+	start()
+	
+#	song_position_in_beats += 1
+#	if song_position_in_beats < beats_before_start - 1:
+#		$StartTimer.start()
+#	elif song_position_in_beats == beats_before_start - 1:
+#		$StartTimer.wait_time = $StartTimer.wait_time - (AudioServer.get_time_to_next_mix() +
+#														AudioServer.get_output_latency())
+#		$StartTimer.start()
+#	else:
+#		play()
+#		$StartTimer.stop()
+#	_report_beat()

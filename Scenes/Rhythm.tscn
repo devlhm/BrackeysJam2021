@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Conductor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Rhythm.gd" type="Script" id=2]
@@ -9,12 +9,14 @@
 [ext_resource path="res://Scenes/Neighbor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Textures/HUD/3notas.png" type="Texture" id=8]
 [ext_resource path="res://Textures/HUD/5notas.png" type="Texture" id=9]
-[ext_resource path="res://Textures/HUD/chaos cheio.png" type="Texture" id=10]
+[ext_resource path="res://Textures/chaos_bar_fill.png" type="Texture" id=10]
 [ext_resource path="res://Textures/HUD/chaos zerado.png" type="Texture" id=11]
 [ext_resource path="res://Textures/HUD/chaos vazio.png" type="Texture" id=12]
 [ext_resource path="res://Textures/HUD/combos.png" type="Texture" id=13]
 [ext_resource path="res://Textures/HUD/pontos.png" type="Texture" id=14]
 [ext_resource path="res://Fonts/GROBOLD.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Scenes/NoteScroller.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/SFXPlayer.gd" type="Script" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "add_lane_4"
@@ -198,9 +200,11 @@ tracks/0/keys = {
 }
 
 [node name="Rythm" type="Node2D"]
+position = Vector2( 0, 1 )
 script = ExtResource( 2 )
+play_from = 100
 supress_threshold = 3
-miss_damage = 1.5
+miss_damage = 3.0
 
 [node name="Conductor" parent="." instance=ExtResource( 1 )]
 pause_mode = 1
@@ -219,6 +223,7 @@ __meta__ = {
 }
 
 [node name="Buttons" type="Node2D" parent="."]
+position = Vector2( -60, 0 )
 
 [node name="Button" parent="Buttons" groups=[
 "button",
@@ -226,6 +231,7 @@ __meta__ = {
 pause_mode = 1
 position = Vector2( 563, 680 )
 input = "button1"
+gray = Color( 0.411765, 0.411765, 0.411765, 1 )
 
 [node name="Button2" parent="Buttons" groups=[
 "button",
@@ -233,6 +239,7 @@ input = "button1"
 pause_mode = 1
 position = Vector2( 683, 680 )
 input = "button2"
+gray = Color( 0.254902, 0.254902, 0.254902, 1 )
 
 [node name="Button3" parent="Buttons" groups=[
 "button",
@@ -240,28 +247,36 @@ input = "button2"
 pause_mode = 1
 position = Vector2( 803, 680 )
 input = "button3"
+gray = Color( 0.254902, 0.254902, 0.254902, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons"]
 anims/add_lane_4 = SubResource( 1 )
 anims/add_lane_5 = SubResource( 2 )
 
-[node name="Button4" parent="." instance=ExtResource( 3 )]
+[node name="Button4" parent="." groups=[
+"button",
+] instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( 863, 860 )
+position = Vector2( 863, 680 )
 input = "button4"
+gray = Color( 0.254902, 0.254902, 0.254902, 1 )
 
 [node name="Button5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 923, 860 )
 input = "button5"
+gray = Color( 0.254902, 0.254902, 0.254902, 1 )
 
-[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." groups=[
+"SFX",
+]]
 bus = "SFX"
+script = ExtResource( 17 )
 
 [node name="GameOverLayer" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
 
 [node name="Neighbor" parent="." instance=ExtResource( 7 )]
-visit_chance = 0
+stop_threshold = 2.0
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -275,6 +290,8 @@ position = Vector2( 797, 384 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lane"]
 position = Vector2( -0.594604, 0 )
 frames = SubResource( 3 )
+
+[node name="NoteScroller" parent="." instance=ExtResource( 16 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -344,15 +361,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HPBar" type="TextureProgress" parent="CanvasLayer"]
+[node name="HPBar" type="Control" parent="CanvasLayer"]
 pause_mode = 1
 margin_left = 928.358
 margin_top = 363.921
 margin_right = 1128.36
 margin_bottom = 443.921
+script = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="CanvasLayer/HPBar"]
+
+[node name="chaos zerado" type="Sprite" parent="CanvasLayer/HPBar"]
+position = Vector2( 102.249, 39.1248 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 11 )
+
+[node name="Bar" type="TextureProgress" parent="CanvasLayer/HPBar"]
+pause_mode = 1
+margin_left = 12.0
+margin_top = 35.0
+margin_right = 149.0
+margin_bottom = 52.0
+step = 0.01
 value = 50.0
-texture_under = ExtResource( 11 )
-texture_over = ExtResource( 12 )
 texture_progress = ExtResource( 10 )
 nine_patch_stretch = true
 script = SubResource( 6 )
@@ -360,7 +394,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tween" type="Tween" parent="CanvasLayer/HPBar"]
+[node name="chaos vazio" type="Sprite" parent="CanvasLayer/HPBar"]
+position = Vector2( 101.207, 39.7962 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 12 )
 
 [node name="ResultsScreen" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
@@ -376,6 +413,8 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/ResultsScreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.37842
+margin_right = 2.37842
 color = Color( 0.270588, 0, 0.337255, 0.87451 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -527,18 +566,28 @@ __meta__ = {
 }
 
 [node name="Continue" type="Label" parent="CanvasLayer/ResultsScreen"]
-margin_left = 254.946
-margin_top = 490.497
-margin_right = 499.946
-margin_bottom = 516.497
+margin_left = 305.0
+margin_top = 510.0
+margin_right = 550.0
+margin_bottom = 536.0
 custom_fonts/font = SubResource( 7 )
 text = "Press Enter to Continue..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Retry" type="Label" parent="CanvasLayer/ResultsScreen"]
+margin_left = 50.0
+margin_top = 510.0
+margin_right = 205.0
+margin_bottom = 536.0
+custom_fonts/font = SubResource( 7 )
+text = "Press R to Retry"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ResultsScreen"]
 anims/move = SubResource( 9 )
-
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

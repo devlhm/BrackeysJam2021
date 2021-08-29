@@ -4,17 +4,14 @@ var hp
 var score
 var combo
 
-onready var hp_bar = $CanvasLayer/HPBar
+onready var hp_bar = $CanvasLayer/HPBar/Bar
 onready var bar_tween = $CanvasLayer/HPBar/Tween
 
 onready var combo_label = $CanvasLayer/ScoreIndicator/Combo
 onready var score_label = $CanvasLayer/ScoreIndicator/Score
 onready var results_screen = $CanvasLayer/ResultsScreen
 
-
-var missSFX = []
-
-export (Script) var song
+export (int) var play_from
 
 var max_combo
 var great
@@ -23,9 +20,7 @@ var okay
 var missed
 
 var showing_results = false
-
-var songs = [FirstSong, SecondSong, ThirdSong]
-var song_index = 0
+onready var song_index = Global.song_index
 
 var bpm
 
@@ -56,14 +51,12 @@ onready var overlay = get_parent().get_node("ColorOverlay")
 onready var vignette = get_parent().get_node("Vignette")
 
 var lane = 0
-var note_path = "res://Scenes/Note"
 var trail = load("res://Scenes/Trail.tscn")
 var filter = load("res://Sounds/Filter.tres")
 var instance
 var climax : bool = false
 var supressing : bool = false
 export var supress_threshold = 1
-
 var lanes = []
 var lane_amount
 
@@ -71,15 +64,16 @@ var lightbulb
 var lightbulb_tween
 var lightbulb_sprite
 
-var colors = ["Green", "Blue", "Red", "Yellow", "Pink"]
+export (Color, RGB) var lightbulb_purple
+export (Color, RGB) var lightbulb_blue
 
 export (NodePath) var tv_screen_path
 var tv_screen
-export (float) var miss_damage = 3
+export (float) var miss_damage = 0
 
 func _ready():
+	Engine.time_scale = 1
 	randomize()
-	get_lanes()
 
 	default_shader_scale = vignette.get_material().get("shader_param/SCALE")
 	tv_screen = get_node(tv_screen_path)
@@ -89,27 +83,26 @@ func _ready():
 	default_light_energy = lightbulb.energy
 	default_alpha = modulate.a
 	default_overlay_alpha = overlay.modulate.a
-	for i in range(1, 9):
-		missSFX.append(load("res://Sounds/miss" + str(i) + ".ogg"))
 
-	initialize()
-	start_song(8)
+	start_song(3)
 
 func _process(delta):
 	if $Neighbor.visiting && tv_screen.animation != "skull":
 		tv_screen.animation = "skull"
+		$SFXPlayer.play_bell()
+		
 	elif !$Neighbor.visiting && tv_screen.animation != "default":
 		tv_screen.animation = "default"
+		$SFXPlayer.play_footsteps()
 
-func start_song(offset : int):
+func start_song(offset : int = 4):
+	song_index = Global.song_index
+	$Conductor.initialize(Global.songs[song_index])
 	initialize()
-	$Conductor.initialize(songs[song_index])
-	$Conductor.play_with_beat_offset(offset)
-	
-	# if song_index == 0:
-	# 	$Conductor.play_from_beat(390, offset)
-	# else:
-	# 	$Conductor.play_with_beat_offset(offset)
+#	if song_index != 0:
+#		play_from = 0
+
+	$Conductor.play_from_beat(play_from, offset)
 
 func _input(event):
 	if event.is_action("escape"):
@@ -143,11 +136,19 @@ func _input(event):
 
 	if showing_results:
 		if event.is_action("ui_accept"):
+			showing_results = false
 			results_screen.get_node("AnimationPlayer").play_backwards("move")
-			get_parent().get_node("AnimationPlayer").play("to_song_" + str(song_index + 1))
+			Global.song_index += 1
+			get_parent().get_node("AnimationPlayer").play("to_song_" + str(Global.song_index + 1))
+		elif event.is_action("retry"):
+			get_tree().reload_current_scene()
 
 func _on_Conductor_beat(position_beats, position_measure):
-	if !song_started && position_beats >= songs[song_index].song_start:
+	
+	if position_beats == (Global.songs[song_index].song_start - 1):
+		get_tree().call_group("player", "transit")
+	
+	if !song_started && position_beats >= Global.songs[song_index].song_start:
 		song_started = true
 
 	if song_started:
@@ -168,65 +169,23 @@ func _on_Conductor_beat(position_beats, position_measure):
 		lightbulb_tween.interpolate_property(lightbulb_sprite, "modulate", lightbulb_sprite.modulate, Color(1,1,1), .5, Tween.EASE_OUT)
 		lightbulb_tween.start()
 
-
 	print("measure: " + str(position_measure))
 	print("beat: " + str(position_beats))
 
-	var next_pattern_index = pattern_index + 1
-	if next_pattern_index < pattern_beats.size():
-		next_pattern_beat = pattern_beats[pattern_index + 1]
-
-	if position_beats == next_pattern_beat:
-		pattern_index += 1
-
-	pattern = songs[song_index].notes.get(pattern_beats[pattern_index])
-	if pattern:
-		_spawn_notes(pattern[position_measure - 1])
-
-	if position_beats == songs[song_index].neighbor_start:
+	if position_beats == Global.songs[song_index].neighbor_start:
 		$Neighbor.start()
-	elif position_beats == songs[song_index].neighbor_end:
+	elif position_beats == Global.songs[song_index].neighbor_end:
 		$Neighbor.end()
 
-	if position_beats == songs[song_index].climax:
+	if position_beats == Global.songs[song_index].climax:
 		enter_climax()
-		
-	if position_beats >= songs[song_index].song_end:
+
+	if position_beats >= Global.songs[song_index].song_end:
 		$Conductor.stop_song()
-		song_index += 1
-		results()		
-
-func _spawn_notes(to_spawn):
-	if(to_spawn > 0):
-		var i = 0
-
-		if(to_spawn == lane_amount):
-
-			while(i < to_spawn):
-				var color = colors[i]
-				var note = load(note_path + color + ".tscn")
-
-				instance = note.instance()
-				instance.initialize(lanes[i], i, DIST_TO_TARGET, climax)
-				add_child(instance)
-				i += 1
-		else:
-			var occupied_lanes := []
-			while(i < to_spawn):
-
-				while(true):
-					lane = randi() % lane_amount
-					if !occupied_lanes.has(lane):
-						occupied_lanes.append(lane)
-						break
-
-				var color = colors[lane]
-				var note = load(note_path + color + ".tscn")
-				instance = note.instance()
-				instance.initialize(lanes[lane], lane, DIST_TO_TARGET, climax)
-				add_child(instance)
-
-				i += 1
+		get_tree().call_group("player", "transit_back")
+		exit_climax()
+#		Global.song_index += 1
+		results()
 
 func increment_score(by):
 	if by > 0:
@@ -259,25 +218,27 @@ func increase_hp():
 	update_hp_bar()
 
 func miss(damage):
+	return
+
 	combo = 0
 	combo_label.text = "0x"
 
 	hp -= damage
 	update_hp_bar()
-#	Global.camera.shake(100, .5, 100)
+
 	if(!supressing):
 		$Glitch.start()
 
-		var rng = RandomNumberGenerator.new()
-		rng.randomize()
-		$SFXPlayer.stream = missSFX[rng.randi_range(0,7)]
-		$SFXPlayer.play()
+		
+		$SFXPlayer.play_miss()
 
 	if hp <= 0:
 		$Glitch.end()
 		$GameOverLayer/Control.start()
 
 func initialize():
+	song_index = Global.song_index
+
 	hp = 50
 	score = 0
 	combo = 0
@@ -291,40 +252,57 @@ func initialize():
 	song_position = 0.0
 	last_spawned_beat = 0
 	song_started = false
-	
-	pattern_index = 0
-	pattern_beats = songs[song_index].notes.keys()
-	bpm = songs[song_index].bpm
-	next_pattern_beat = null
-	pattern = null
+	bpm = Global.songs[song_index].bpm
 	
 	score_label.text = "0"
 	combo_label.text = "0x"
+	$NoteScroller.initialize()
 	update_hp_bar()
 
 func update_hp_bar():
 	hp = clamp(hp, hp_bar.min_value, hp_bar.max_value)
-	bar_tween.interpolate_property(hp_bar, "value", hp_bar.value, hp, .5, Tween.EASE_OUT)
+	bar_tween.interpolate_property(hp_bar, "value", hp_bar.value, hp, .2, Tween.EASE_OUT)
 	bar_tween.start()
 
 func enter_climax():
+	$NoteScroller.climax = true
 	climax = true
 
 	for button in get_tree().get_nodes_in_group("button"):
-		button.frame = 1
+		button.frame = 2
+		button.modulate = Color(2, 2, 2)
+		button.get_node("ShineParticles").emitting = true
 
-	for note in get_tree().get_nodes_in_group("note"):
+	for note in get_tree().get_nodes_in_group("visible"):
 		note.get_node("AnimatedSprite").frame = 1
+		Global.camera.shake(300, .5, 300)
+		note.get_node("AnimatedSprite").modulate = Color(2.5, 2.5, 2.5)
 
-func get_lanes():
-	lanes.clear()
+	
+	lightbulb.get_node("LightbulbSprite").frame = 1
+	lightbulb.color = lightbulb_purple
+	
+func exit_climax():
+	$NoteScroller.climax = false
+	climax = false
+
 	for button in get_tree().get_nodes_in_group("button"):
-		var pos = Vector2(button.global_position.x, SPAWN_Y)
-		lanes.append(pos)
-	lane_amount = lanes.size()
+		button.frame = 0
+		button.modulate = Color(1.5, 1.5, 1.5)
+		button.get_node("ShineParticles").emitting = false
+
+	for note in get_tree().get_nodes_in_group("visible"):
+		note.get_node("AnimatedSprite").frame = 0
+		Global.camera.shake(200, .5, 200)
+		note.get_node("AnimatedSprite").modulate = Color(1, 1, 1)
+
+	
+	lightbulb.get_node("LightbulbSprite").frame = 0
+	lightbulb.color = lightbulb_blue
 
 func add_button(btn_index : int):
 	$Buttons/AnimationPlayer.play("add_lane_" + str(btn_index))
+	get_parent().get_node("Player").get_node("AnimatedSprite").playing = true
 
 func reparent_button(num : int):
 	var button = get_node("Button" + str(num))

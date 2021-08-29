@@ -4,6 +4,7 @@
 
 [node name="Neighbor" type="Node2D"]
 script = ExtResource( 1 )
+visit_chance = 0
 
 [node name="NeighborIndicator" type="Label" parent="."]
 visible = false
