@@ -6,5 +6,5 @@ func _ready():
 
 
 func _on_SplashScreenPlayer_finished():
-	get_tree().change_scene("res://Scenes/Menu.tscn")
+	get_tree().change_scene("res://Scenes/InitialCutscene.tscn")
 	pass

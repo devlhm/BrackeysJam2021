@@ -1,0 +1,239 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Sprites/Menu/OptionsMenu/MusicOn.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Menu/OptionsMenu/Slider.tres" type="StyleBox" id=2]
+[ext_resource path="res://Sprites/Menu/OptionsMenu/Grabber.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Menu/OptionsMenu/Area.tres" type="StyleBox" id=4]
+[ext_resource path="res://Scripts/PausedMenu.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/Menu/OptionsMenu/SfxOn.png" type="Texture" id=8]
+[ext_resource path="res://Fonts/mangat.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/background2.png-4e36641397640ef1b56ae614f15787a5.stex"
+
+[sub_resource type="DynamicFont" id=2]
+size = 96
+outline_size = 16
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 64
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 11 )
+
+[node name="PausedMenu" type="CanvasLayer"]
+pause_mode = 2
+
+[node name="PausedMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="PausedMenu"]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="PausedMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.0
+margin_top = 70.0
+margin_right = -70.0
+margin_bottom = -70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="PausedMenu/Margin"]
+margin_right = 1226.0
+margin_bottom = 628.0
+custom_constants/separation = 20
+
+[node name="Title" type="Label" parent="PausedMenu/Margin/VBox"]
+margin_right = 1226.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 2 )
+text = "PAUSED"
+align = 1
+valign = 1
+
+[node name="Sliders" type="VBoxContainer" parent="PausedMenu/Margin/VBox"]
+margin_top = 131.0
+margin_right = 1226.0
+margin_bottom = 408.0
+size_flags_vertical = 3
+custom_constants/separation = 25
+alignment = 1
+
+[node name="MusicContainer" type="HBoxContainer" parent="PausedMenu/Margin/VBox/Sliders"]
+margin_top = 27.0
+margin_right = 1226.0
+margin_bottom = 126.0
+custom_constants/separation = 30
+
+[node name="MusicButton" type="TextureButton" parent="PausedMenu/Margin/VBox/Sliders/MusicContainer"]
+margin_right = 277.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 277, 99 )
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="MusicSlider" type="HSlider" parent="PausedMenu/Margin/VBox/Sliders/MusicContainer"]
+margin_left = 307.0
+margin_right = 1226.0
+margin_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_icons/grabber_disabled = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 3 )
+custom_styles/slider = ExtResource( 2 )
+custom_styles/grabber_area_highlight = ExtResource( 4 )
+custom_styles/grabber_area = ExtResource( 4 )
+min_value = -30.0
+max_value = 0.0
+value = -15.0
+
+[node name="SFXContainer" type="HBoxContainer" parent="PausedMenu/Margin/VBox/Sliders"]
+margin_top = 151.0
+margin_right = 1226.0
+margin_bottom = 250.0
+custom_constants/separation = 30
+
+[node name="SFXButton" type="TextureButton" parent="PausedMenu/Margin/VBox/Sliders/SFXContainer"]
+margin_right = 277.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 277, 99 )
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="SFXSlider" type="HSlider" parent="PausedMenu/Margin/VBox/Sliders/SFXContainer"]
+margin_left = 307.0
+margin_right = 1226.0
+margin_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_icons/grabber_disabled = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 3 )
+custom_styles/slider = ExtResource( 2 )
+custom_styles/grabber_area_highlight = ExtResource( 4 )
+custom_styles/grabber_area = ExtResource( 4 )
+min_value = -30.0
+max_value = 0.0
+value = -15.0
+
+[node name="HBox" type="HBoxContainer" parent="PausedMenu/Margin/VBox"]
+margin_top = 428.0
+margin_right = 1226.0
+margin_bottom = 508.0
+rect_min_size = Vector2( 1226, 80 )
+
+[node name="ChangeControlsButton" type="Button" parent="PausedMenu/Margin/VBox/HBox"]
+margin_right = 494.0
+margin_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "Change Controls"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="CenterContainer" parent="PausedMenu/Margin/VBox"]
+margin_top = 528.0
+margin_right = 1226.0
+margin_bottom = 628.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 1226, 100 )
+
+[node name="HBox" type="HBoxContainer" parent="PausedMenu/Margin/VBox/Center"]
+margin_left = 141.0
+margin_top = 10.0
+margin_right = 1084.0
+margin_bottom = 90.0
+custom_constants/separation = 80
+
+[node name="BackButton" type="Button" parent="PausedMenu/Margin/VBox/Center/HBox"]
+margin_right = 175.0
+margin_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
+text = "Back"
+flat = true
+
+[node name="RetryButton" type="Button" parent="PausedMenu/Margin/VBox/Center/HBox"]
+margin_left = 255.0
+margin_right = 690.0
+margin_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 7 )
+text = "Retry Song"
+flat = true
+
+[node name="BackMenuButton" type="Button" parent="PausedMenu/Margin/VBox/Center/HBox"]
+margin_left = 770.0
+margin_right = 943.0
+margin_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
+text = "Quit"
+flat = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="PausedMenu"]
+bus = "SFX"
+
+[connection signal="pressed" from="PausedMenu/Margin/VBox/Sliders/MusicContainer/MusicButton" to="PausedMenu" method="_on_OptionsButton_pressed" binds= [ "Music" ]]
+[connection signal="value_changed" from="PausedMenu/Margin/VBox/Sliders/MusicContainer/MusicSlider" to="PausedMenu" method="_on_Slider_value_changed" binds= [ "Music" ]]
+[connection signal="pressed" from="PausedMenu/Margin/VBox/Sliders/SFXContainer/SFXButton" to="PausedMenu" method="_on_OptionsButton_pressed" binds= [ "SFX" ]]
+[connection signal="value_changed" from="PausedMenu/Margin/VBox/Sliders/SFXContainer/SFXSlider" to="PausedMenu" method="_on_Slider_value_changed" binds= [ "SFX" ]]
+[connection signal="mouse_entered" from="PausedMenu/Margin/VBox/HBox/ChangeControlsButton" to="PausedMenu" method="_on_Button_mouse_entered" binds= [ "ChangeControls" ]]
+[connection signal="mouse_exited" from="PausedMenu/Margin/VBox/HBox/ChangeControlsButton" to="PausedMenu" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="PausedMenu/Margin/VBox/HBox/ChangeControlsButton" to="PausedMenu" method="_on_Button_pressed" binds= [ "ChangeControls" ]]
+[connection signal="mouse_entered" from="PausedMenu/Margin/VBox/Center/HBox/BackButton" to="PausedMenu" method="_on_Button_mouse_entered" binds= [ "Back" ]]
+[connection signal="mouse_exited" from="PausedMenu/Margin/VBox/Center/HBox/BackButton" to="PausedMenu" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="PausedMenu/Margin/VBox/Center/HBox/BackButton" to="PausedMenu" method="_on_Button_pressed" binds= [ "Back" ]]
+[connection signal="mouse_entered" from="PausedMenu/Margin/VBox/Center/HBox/RetryButton" to="PausedMenu" method="_on_Button_mouse_entered" binds= [ "Retry" ]]
+[connection signal="mouse_exited" from="PausedMenu/Margin/VBox/Center/HBox/RetryButton" to="PausedMenu" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="PausedMenu/Margin/VBox/Center/HBox/RetryButton" to="PausedMenu" method="_on_Button_pressed" binds= [ "Retry" ]]
+[connection signal="mouse_entered" from="PausedMenu/Margin/VBox/Center/HBox/BackMenuButton" to="PausedMenu" method="_on_Button_mouse_entered" binds= [ "Quit" ]]
+[connection signal="mouse_exited" from="PausedMenu/Margin/VBox/Center/HBox/BackMenuButton" to="PausedMenu" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="PausedMenu/Margin/VBox/Center/HBox/BackMenuButton" to="PausedMenu" method="_on_Button_pressed" binds= [ "Quit" ]]
